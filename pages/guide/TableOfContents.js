@@ -41,7 +41,7 @@ export const pages = [
   },
   {
     name: "Using the Tips table",
-    href: "/guide/susing-the-tips-table",
+    href: "/guide/using-the-tips-table",
   },
   {
     name: "Setting up the site",

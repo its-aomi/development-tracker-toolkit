@@ -1,6 +1,6 @@
-import TableOfContents from './TableOfContents';
-import Image from 'next/image';
-import new_supabase_bucket_policy from './images/setting-up-the-site/new-supabase-bucket-policy.png'
+import TableOfContents from "./TableOfContents";
+import Image from "next/image";
+import new_supabase_bucket_policy from "./images/setting-up-the-site/new-supabase-bucket-policy.png";
 
 # Setting up the site
 
@@ -67,7 +67,7 @@ Create a new policy that looks like this: `SELECT` and `INSERT` should be checke
 6. Navigate to your Supabase project settings, which is the gear icon on the bottom of the left-hand sidebar.
 7. Click "API" under "Project Settings".
 8. Copy, the `anon` `public` API key, starting with `ey`, as the `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
-9. Copy the URL of the Supabase project, including the `.supabase.co` suffix, under "Configuration", as the `NEXT_PUBLIC_SUPABASE_URL`: 
+9. Copy the URL of the Supabase project, including the `.supabase.co` suffix, under "Configuration", as the `NEXT_PUBLIC_SUPABASE_URL`:
 
 Congrats! You've configured all the underlying services - you're ready to run the development server.
 
@@ -75,7 +75,7 @@ Congrats! You've configured all the underlying services - you're ready to run th
 
 Now that you're done configuring the site, it's time to run a development server locally so you can make changes to the site and test those changes on your local machine, before pushing those changes to your GitHub repository.
 
-Make sure your project is open in  run the following command: `npm run dev`.
+Make sure your project is open in run the following command: `npm run dev`.
 
 You should see a message in the terminal:
 
@@ -84,9 +84,5 @@ ready - started server on 0.0.0.0:3000, url: http://localhost:3000
 ```
 
 Go to your browser and navigate to `http://localhost:3000` -- you should see a live copy of the site!
-
-### Common error messages
-
-Now, you 
 
 <TableOfContents index={10} />

@@ -1,4 +1,4 @@
-import TableOfContents from './TableOfContents';
+import TableOfContents from "./TableOfContents";
 
 # Setting up your Airtable base
 
@@ -8,7 +8,7 @@ import TableOfContents from './TableOfContents';
 2. Go to the "Local Development Tracker" on [Airtable Universe](https://www.airtable.com/universe/exp1PtSWxyPHYGMIk/local-development-tracker), click "Copy Base", and add it to "My First Workspace."
 3. Invite anyone else working on the project to the [base](https://support.airtable.com/hc/en-us/articles/202625759-Adding-a-base-collaborator) (or [workspace](https://support.airtable.com/hc/en-us/articles/203313505-Adding-a-workspace-collaborator)) as a collaborator with editor or creator permissions.
 4. Before you start adding your own data, review and [delete]() the sample records in all three tables: Projects, Contact Us, and Tips.
-5. Don't delete, add or modify fields or tables before reading 
+5. Don't delete, add or modify fields or tables before reading
 
 Let's walk through what's included in this version.
 
@@ -16,7 +16,7 @@ First, you should see three tables: Projects, Contact Us, and Tips.
 
 ## Projects table
 
-The projects table is the first and main table you’ll be using, shown by default in grid view. It is where you add information about real estate development sites. You can use different views or interfaces to add this information, described later in TKTK section, but 
+The projects table is the first and main table you’ll be using, shown by default in grid view. It is where you add information about real estate development sites. You can use different views or interfaces to add this information, described later in TKTK section, but
 
 ### Public-facing fields
 
@@ -29,9 +29,9 @@ The Name field is a public-facing name for a development project.
 - Example: Brush 8 Townhomes
 - This will display as the page title on the public-facing site
 - This must be filled in
-- It should typically be five words or fewer. 
-- We typically use the names given by developers, the city or how they are referenced in reporting. 
-  - If there is no official name yet for a development, you can add a descriptive name, like cross streets or neighborhood and type of project. 
+- It should typically be five words or fewer.
+- We typically use the names given by developers, the city or how they are referenced in reporting.
+  - If there is no official name yet for a development, you can add a descriptive name, like cross streets or neighborhood and type of project.
   - Example: Corktown retail building
 
 #### Project field: Slug
@@ -68,67 +68,59 @@ Whether the development project is a new build, a rehab, or both.
 
 Where the development is in its process, from speculative to complete.
 
-- This is a single-select field, and the selection will appear on the public-facing page. 
-- It can be left empty if unknown (though we use the unclear option if so).  
-- The template includes seven statuses: speculative, proposed, under construction, complete, stalled, unclear and for sale. You can create internal definitions for these categories or add/edit/delete options based on your data (for example, you might match statues to city processes, like pulled permits). 
+- This is a single-select field, and the selection will appear on the public-facing page.
+- It can be left empty if unknown (though we use the unclear option if so).
+- The template includes seven statuses: speculative, proposed, under construction, complete, stalled, unclear and for sale. You can create internal definitions for these categories or add/edit/delete options based on your data (for example, you might match statues to city processes, like pulled permits).
 
 #### Project field: Uses
 
-The intended use of the development, like residential or commercial. 
+The intended use of the development, like residential or commercial.
 
 - This is a multiple select field, and the selections will appear on the public-facing page.
-- It can be left empty if unknown.  
-- The template includes 17 options, based on uses we identified in new and ongoing developments in Detroit. You can adjust the available options based on your local developments, and choose to go more granular or broader.   
+- It can be left empty if unknown.
+- The template includes 17 options, based on uses we identified in new and ongoing developments in Detroit. You can adjust the available options based on your local developments, and choose to go more granular or broader.
 
 #### Project field: Images
 
 Photos, renderings, site plans or other images of the development project.
-This is an attachment field, and any images you add will appear in a carousel on the public-facing page. 
+This is an attachment field, and any images you add will appear in a carousel on the public-facing page.
 
 - It can be left empty if there are no related images.
-- This field allows many attachments of varying formats and sizes. You can use whatever best image practices you’ve identified for your site, but keep in mind that there is a total attachment limit of 2GB on the free tier. 
-- We use JPEGs and PNGs, optimize images for web with [https://tinyjpg.com/](https://tinyjpg.com) and prefer image dimensions to be between 800-1500 pixels wide. We set an internal limit of three images per record to keep things manageable. 
-- Here’s [more details about attachment fields](https://support.airtable.com/hc/en-us/articles/360007852173-Attachment-field) and how to upload. 
+- This field allows many attachments of varying formats and sizes. You can use whatever best image practices you’ve identified for your site, but keep in mind that there is a total attachment limit of 2GB on the free tier.
+- We use JPEGs and PNGs, optimize images for web with [https://tinyjpg.com/](https://tinyjpg.com) and prefer image dimensions to be between 800-1500 pixels wide. We set an internal limit of three images per record to keep things manageable.
+- Here’s [more details about attachment fields](https://support.airtable.com/hc/en-us/articles/360007852173-Attachment-field) and how to upload.
 
 #### Project field: Image caption
 
-Caption and credit information for your uploaded images. 
+Caption and credit information for your uploaded images.
 
 - Example: Brush 8 Townhomes under construction in February 2022. Credit: Jimmy McBroom
 - This is a long text field that allows rich text formatting, and will display captions sequentially on the public-facing page with the corresponding images.
-- It must be left empty if there are no images for the record, and must be filled out if there are. 
-- If there is more than one image for a record, enter each caption on its own line, without a paragraph break. Use the same ordering as the images appear in the image field (you can click and drag to rearrange). 
+- It must be left empty if there are no images for the record, and must be filled out if there are.
+- If there is more than one image for a record, enter each caption on its own line, without a paragraph break. Use the same ordering as the images appear in the image field (you can click and drag to rearrange).
 - Use whatever styling and credit policies make sense for your site to create a standard format. Ours is: “[a sentence describing the image]. Credit: [source, with link]”
 
 ### Internal fields
+
 The following fields are used internally. These fields can be changes or customized as needed and they will not affect the public-facing site.
 
 #### Project field: Record status
 
-A single select field used internally to track whether records are assigned, ready for review, hold or published. 
+A single select field used internally to track whether records are assigned, ready for review, hold or published.
 
-- You will need to use the last option – selecting "Published" is how you send a record to go live as a page on the public-facing site the next time it is rebuilt. 
-- You don’t have to use the other options, but in conjunction with the assigned to field and automations they are useful for production and handoffs – i.e., setting up an automated Slack message whenever a record is marked ready for review. It’s also an easy way to filter all projects that aren’t yet completed or need an editor. We use the hold option for records that are incomplete for various reasons, like requiring additional reporting. 
-- It is okay to add additional selection options if you have a different workflow – but do not change or delete the "Published" option. 
-- If you need to unpublish a record from the live site, change the record status to hold or another option. 
+- You will need to use the last option – selecting "Published" is how you send a record to go live as a page on the public-facing site the next time it is rebuilt.
+- You don’t have to use the other options, but in conjunction with the assigned to field and automations they are useful for production and handoffs – i.e., setting up an automated Slack message whenever a record is marked ready for review. It’s also an easy way to filter all projects that aren’t yet completed or need an editor. We use the hold option for records that are incomplete for various reasons, like requiring additional reporting.
+- It is okay to add additional selection options if you have a different workflow – but do not change or delete the "Published" option.
+- If you need to unpublish a record from the live site, change the record status to hold or another option.
 - If you have a published record that you would like to update, don’t switch it back to assigned or ready to review. You can comment on the record or add to the notes field (below), and you can tag someone in your note field or comment as necessary (or add them as a collaborator in the assigned to field).
-
-
 
 ## Tips table
 
 ## Contact us table
 
-
-
-
-
-
-
-
 ## What you can and can't customize without coding
 
-The Airtable base will be linked to your public-facing site. Different elements of the base correspond to different elements of the site code, and certain changes you might want to make to your Airtable base could cause unintentional bugs in the site. Here’s what you can and can’t adjust without further coding. 
+The Airtable base will be linked to your public-facing site. Different elements of the base correspond to different elements of the site code, and certain changes you might want to make to your Airtable base could cause unintentional bugs in the site. Here’s what you can and can’t adjust without further coding.
 
 ### Don't make changes to
 
@@ -144,6 +136,5 @@ The Airtable base will be linked to your public-facing site. Different elements 
     - _Tips_
   - In the **Tips** table, this includes the following fields:
     - _Projects_
-
 
 <TableOfContents index={6} />
