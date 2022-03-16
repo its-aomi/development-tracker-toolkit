@@ -4,12 +4,16 @@ import Link from "next/link";
 import React from "react";
 export const pages = [
   {
-    name: "What's in this guide?",
-    href: "/guide/whats-in-this-guide",
+    name: "About this guide",
+    href: "/guide/about-this-guide",
   },
   {
-    name: "What is a news app?",
-    href: "/guide/what-is-a-news-app",
+    name: "How to use this guide",
+    href: "/guide/how-to-use-this-guide",
+  },
+  {
+    name: "What you will need",
+    href: "/guide/what-you-will-need",
   },
   {
     name: "Initial questions to ask",
@@ -20,12 +24,24 @@ export const pages = [
     href: "/guide/starting-with-the-data",
   },
   {
-    name: "Airtable basics",
-    href: "/guide/airtable-basics",
+    name: "Organizing your data: Airtable basics",
+    href: "/guide/organize-your-data-airtable-basics",
   },
   {
-    name: "Setting up and using your base",
-    href: "/guide/setting-up-and-using-your-base",
+    name: "Setting up your Airtable base",
+    href: "/guide/setting-up-your-airtable-base",
+  },
+  {
+    name: "Using the Projects table",
+    href: "/guide/using-the-projects-table",
+  },
+  {
+    name: "Using the Contact Us table",
+    href: "/guide/using-the-contact-us-table",
+  },
+  {
+    name: "Using the Tips table",
+    href: "/guide/susing-the-tips-table",
   },
   {
     name: "Setting up the site",
@@ -38,6 +54,18 @@ export const pages = [
   {
     name: "Publishing the site",
     href: "/guide/publishing-the-site",
+  },
+  {
+    name: "Harnessing reader engagement",
+    href: "/guide/harnessing-reader-engagement",
+  },
+  {
+    name: "Managing your development tracker",
+    href: "/guide/managing-your-development-tracker",
+  },
+  {
+    name: "Get help building your tracker",
+    href: "/guide/get-help-building-your-tracker",
   },
 ];
 
