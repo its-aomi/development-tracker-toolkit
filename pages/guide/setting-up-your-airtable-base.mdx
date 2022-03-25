@@ -2,139 +2,85 @@ import TableOfContents from "./TableOfContents";
 
 # Setting up your Airtable base
 
-## Create a version of the template base
 
-1. Create a free Airtable account at [https://airtable.com/signup](https://airtable.com/signup).
-2. Go to the "Local Development Tracker" on [Airtable Universe](https://www.airtable.com/universe/exp1PtSWxyPHYGMIk/local-development-tracker), click "Copy Base", and add it to "My First Workspace."
-3. Invite anyone else working on the project to the [base](https://support.airtable.com/hc/en-us/articles/202625759-Adding-a-base-collaborator) (or [workspace](https://support.airtable.com/hc/en-us/articles/203313505-Adding-a-workspace-collaborator)) as a collaborator with editor or creator permissions.
-4. Before you start adding your own data, review and [delete]() the sample records in all three tables: Projects, Contact Us, and Tips.
-5. Don't delete, add or modify fields or tables before reading
 
-Let's walk through what's included in this version.
+1. Create a free Airtable account at [https://airtable.com/signup](https://airtable.com/signup) if you do not have one. 
+2. Go to “[Local real estate development tracker](https://www.airtable.com/universe/exp1PtSWxyPHYGMIk/local-development-tracker)” template base on Airtable Universe link base on universe, click “copy base” and add it to “My First Workspace” (or another workspace if you are already using Airtable). You can now open your own copy of the template base, add your data and make changes. Data you store here or changes you make don’t affect the published template and will be private until you share your base with others and/or connect it to a public-facing site.  
+3. Invite anyone else working on the project to the [base](https://support.airtable.com/hc/en-us/articles/202625759-Adding-a-base-collaborator) (or [workspace](https://support.airtable.com/hc/en-us/articles/203313505-Adding-a-workspace-collaborator)) as a collaborator with editor or creator permissions.  
+4. Before you start adding your own data, review and [delete](https://support.airtable.com/hc/en-us/articles/202584459-Deleting-records) the sample records in all three tables: Projects, Contact Us and Tips. 
+5. Don’t delete, add or modify any fields or tables before reading the following section. 
 
-First, you should see three tables: Projects, Contact Us, and Tips.
 
-## Projects table
+## What you can and can’t customize without coding
 
-The projects table is the first and main table you’ll be using, shown by default in grid view. It is where you add information about real estate development sites. You can use different views or interfaces to add this information, described later in TKTK section, but
+The Airtable base will be linked to your public-facing site. Different elements of the base correspond to different elements of the site code, and certain changes you might want to make to your Airtable base could cause unintentional bugs in the site. Here’s what you can and can’t adjust without further coding. 
 
-### Public-facing fields
+**Don’t make changes to:**
 
-The following fields are used in the public-facing site:
+The names of the tables (Projects, Contact us and Tips) or their settings. 
 
-#### Project field: Name
 
-The Name field is a public-facing name for a development project.
 
-- Example: Brush 8 Townhomes
-- This will display as the page title on the public-facing site
-- This must be filled in
-- It should typically be five words or fewer.
-- We typically use the names given by developers, the city or how they are referenced in reporting.
-  - If there is no official name yet for a development, you can add a descriptive name, like cross streets or neighborhood and type of project.
-  - Example: Corktown retail building
+* These are important ones not to change, since references to the specific names are hardcoded into the site.
 
-#### Project field: Slug
+Any fields that contain info that displays on or is submitted from the public site. 
 
-The Slug field is unique text for each record in the Project table; it is used to create the URL for the project page on the public-facing site.
 
-- Example: brush-8-townhomes
-- This field is required and should be filled in as soon as you create a record.
-- Only use lowercase letters, numbers, and hyphens, with no spaces.
-- Choose a consistent naming convention; we used the name from the Name field, without articles.
-- Generally, you don't want to change these, since it will change the URL of the record. If someone has already linked to a record on the public site from elsewhere, that link would be broken if the Slug changed.
 
-#### Project field: Address
+* Don’t change their name, the field type or other options. 
+* Do not delete them: If you do not use a certain field, you can instead [hide](https://support.airtable.com/hc/en-us/articles/360000367008-Hiding-fields-and-field-visibility-overview) it from your views.
+* This includes the following fields in the Projects table: Name, Slug, Address, Build type, Status, Uses, Images, Image Caption, Record Status
+* And the following fields in the Contact us table: Name, Email, Message, 
+* And the following fields in the Tips table: Email, Report, Address, Attachments
 
-This is the street address of the real estate development. The value in this field is [geocoded](https://docs.mapbox.com/playground/geocoding/) to generate a project point for the site that will display on the map page of the public-facing site.
+Any field that is linked to other records in the base. 
 
-- Example: 3119 Brush Street
-- The address should be a street address; the geocoding process will only select results within [your site's bounding box](./customizing-the-site#boundingbox). If you have two or more cities within the site's bounding box, you may need to add the city or zipcode to the address field to get the correct result.
-- It's not recommended to publish a record without an address, as the project won't display on the map or have a map on the record page.
 
-#### Project field: Synopsis
 
-- TKTK
+* Don’t change their name, the field type or other options. 
+* Do not delete them: If you do not use a certain field, you can instead [hide](https://support.airtable.com/hc/en-us/articles/360000367008-Hiding-fields-and-field-visibility-overview) it from your views.
+* This includes the following fields in the Projects table: Reports, Tips
+* And the following fields in the Tips table: Projects
 
-#### Project field: Build type
+**You _can_ make these changes without affecting the site:**
 
-Whether the development project is a new build, a rehab, or both.
+You can add a new table to your base to upload a different dataset and it will not affect the main site. 
 
-- This is a single-select field, and the selection will appear on the public-facing site.
-- It can be left empty if unknown.
-- If you have different categories of build type that make sense for your city, you can add selection options and delete some or all of the three in the template (but do not delete the entire field or change the field type).
 
-#### Project field: Status
 
-Where the development is in its process, from speculative to complete.
+* You might want to add a base that you use internally to organize and track your data sources. Or you may want to bring in a whole new type of linked data to your internal system or the public site (for example, a data set of public meetings that address developments in your Projects table), but that would require additional configuration of the Airtable base and site code.
 
-- This is a single-select field, and the selection will appear on the public-facing page.
-- It can be left empty if unknown (though we use the unclear option if so).
-- The template includes seven statuses: speculative, proposed, under construction, complete, stalled, unclear and for sale. You can create internal definitions for these categories or add/edit/delete options based on your data (for example, you might match statues to city processes, like pulled permits).
+You can adjust fields that are only used internally. 
 
-#### Project field: Uses
 
-The intended use of the development, like residential or commercial.
 
-- This is a multiple select field, and the selections will appear on the public-facing page.
-- It can be left empty if unknown.
-- The template includes 17 options, based on uses we identified in new and ongoing developments in Detroit. You can adjust the available options based on your local developments, and choose to go more granular or broader.
+* You can change their name, type, settings or delete them entirely without affecting the site. 
+* This includes the following fields in the Projects table: Assigned to, Notes, Record created, Last modified
+* And the following fields in the Contact us table: Category or Issue, Assigned to, Replied, Notes, Created
+* And the following fields in the Tips table: Project - manual add, Assigned to, Tip status, Replied?, Notes, Created
 
-#### Project field: Images
+You can add new fields. 
 
-Photos, renderings, site plans or other images of the development project.
-This is an attachment field, and any images you add will appear in a carousel on the public-facing page.
 
-- It can be left empty if there are no related images.
-- This field allows many attachments of varying formats and sizes. You can use whatever best image practices you’ve identified for your site, but keep in mind that there is a total attachment limit of 2GB on the free tier.
-- We use JPEGs and PNGs, optimize images for web with [https://tinyjpg.com/](https://tinyjpg.com) and prefer image dimensions to be between 800-1500 pixels wide. We set an internal limit of three images per record to keep things manageable.
-- Here’s [more details about attachment fields](https://support.airtable.com/hc/en-us/articles/360007852173-Attachment-field) and how to upload.
 
-#### Project field: Image caption
+* If there are other types of data you want to track or are included in a dataset you are importing – or another type of field you want to use for internal workflows – you can add additional fields to any table. 
+* Information in these fields will not be displayed on the public site without additional coding.  
 
-Caption and credit information for your uploaded images.
+You can change the selection options available (not other field type options) in certain single and multi select fields.
 
-- Example: Brush 8 Townhomes under construction in February 2022. Credit: Jimmy McBroom
-- This is a long text field that allows rich text formatting, and will display captions sequentially on the public-facing page with the corresponding images.
-- It must be left empty if there are no images for the record, and must be filled out if there are.
-- If there is more than one image for a record, enter each caption on its own line, without a paragraph break. Use the same ordering as the images appear in the image field (you can click and drag to rearrange).
-- Use whatever styling and credit policies make sense for your site to create a standard format. Ours is: “[a sentence describing the image]. Credit: [source, with link]”
 
-### Internal fields
 
-The following fields are used internally. These fields can be changes or customized as needed and they will not affect the public-facing site.
+* This includes the following fields in the Projects table: Build type, Status, Uses
+    * In the Record Status field, you can change options except the Published option, which must remain as is. 
+    * Here’s how to adjust options for [single](https://support.airtable.com/hc/en-us/articles/360042806873-Single-select-field) and [multi select fields](https://support.airtable.com/hc/en-us/articles/360042806893-Multiple-select-field).
 
-#### Project field: Record status
+You can add, delete or edit views or interfaces for each table. 
 
-A single select field used internally to track whether records are assigned, ready for review, hold or published.
+You can adjust filtering, grouping and sorting within each table. 
 
-- You will need to use the last option – selecting "Published" is how you send a record to go live as a page on the public-facing site the next time it is rebuilt.
-- You don’t have to use the other options, but in conjunction with the assigned to field and automations they are useful for production and handoffs – i.e., setting up an automated Slack message whenever a record is marked ready for review. It’s also an easy way to filter all projects that aren’t yet completed or need an editor. We use the hold option for records that are incomplete for various reasons, like requiring additional reporting.
-- It is okay to add additional selection options if you have a different workflow – but do not change or delete the "Published" option.
-- If you need to unpublish a record from the live site, change the record status to hold or another option.
-- If you have a published record that you would like to update, don’t switch it back to assigned or ready to review. You can comment on the record or add to the notes field (below), and you can tag someone in your note field or comment as necessary (or add them as a collaborator in the assigned to field).
+You can add automations and collaborators. 
 
-## Tips table
+The next three sections walk you through using the three tables in your Airtable base.  
 
-## Contact us table
-
-## What you can and can't customize without coding
-
-The Airtable base will be linked to your public-facing site. Different elements of the base correspond to different elements of the site code, and certain changes you might want to make to your Airtable base could cause unintentional bugs in the site. Here’s what you can and can’t adjust without further coding.
-
-### Don't make changes to
-
-- The names of the tables: (**Projects**, **Contact us**, and **Tips**), or their settings.
-- Any field that contain information that displays on or is submitted from the public site.
-  - Don't change their name, field type, or other options.
-  - Don't delete them: if you do not use a certain field, you can instead [hide]() it from your views.
-- Any field that is linked to other records in the base
-  - Don't change their name, field type, or other options.
-  - Don't delete them: if you do not use a certain field, you can instead [hide]() it from your views.
-  - In the **Projects** table, this includes the following fields:
-    - _Reports_
-    - _Tips_
-  - In the **Tips** table, this includes the following fields:
-    - _Projects_
 
 <TableOfContents index={6} />
