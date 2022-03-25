@@ -1,5 +1,132 @@
 import TableOfContents from './TableOfContents';
 
 # Using the Tips table
+The public-facing site includes a page with a form that allows users to submit tips and optional photos about any real estate development project in your city. It also includes a version of the tip form at the bottom of every development project page. Any tips submitted using these forms will be pulled into the Tips table. 
+
+
+## Fields
+
+
+### Email
+
+Linked to the email address field on the site tip forms. 
+
+
+
+* This will pull in automatically when someone submits a tip. It is not a required field, so may be blank.
+* We decided to make contact information optional to make the tip process as easy as possible; you may decide to adjust that page’s code to only allow non-anonymous tips to make it easier to follow up and verify information. 
+
+
+### Report
+
+Linked to the “What do you see?” field on the site tip forms.
+
+
+
+* This will pull in automatically when someone submits a tip. It is not a required field, so may be blank.
+* This is the main body of the tip. The information may be used to fuel new records in the Projects with information about new developments, or to update existing records.
+
+
+### Address
+
+Linked to the “Where are you?” field on the site tip forms. 
+
+
+
+* This will pull in automatically when someone submits a tip. It is not a required field, so may be blank.
+* The field will accept any text, so someone can include an address or an approximate location to give you more information about their tip.
+
+
+### Attachments
+
+Linked to the “Upload a photo” field on the site tip forms. 
+
+
+
+* This will pull in automatically when someone submits a tip. It is not a required field, so may be blank.
+* People can submit any images that you could copy to new or existing Project table records; you should use your newsroom’s processes for verifying and confirming ownership of photos. 
+
+
+### Projects
+
+This field will fill automatically with a link to the related record in the Projects table when someone submits a tip from a particular development project page on the public-facing site. 
+
+
+
+* It will be blank if someone submits a tip from the main tips page. 
+* Clicking on the linked record will pull up the corresponding development in the Projects table. 
+* This field is helpful for sorting tip records. 
+
+
+### Project - manual add
+
+This is an internal single select field you can use to manually add a link to a record in the Projects table. 
+
+
+
+* When someone submits a tip about a project that is not published on the site, but is one you have started working on, you can use this field to search for and add that project record. 
+* If the tip is about a project you do not have any data for, you can start a new record in the Projects table and then add it to this field. 
+* Using this field is optional but it is helpful for sorting tip records. 
+
+
+### Assigned to
+
+This is an internal field you can use to add collaborators. 
+
+
+
+* Using this field is optional, but it can be helpful for sorting records or for assigning tips that need to be verified, added to the tracker or replied to. 
+
+
+### Tip status
+
+This is a single select field you can use internally to track the status of a tip record. 
+
+
+
+* Using this field is optional, but it can be helpful for sorting records and tracking their status. 
+* You can add, delete or edit the existing options: Resolved, Assigned and Under review. 
+
+
+### Replied?
+
+A checkbox to confirm whether a collaborator has replied to the submitter of the tip. 
+
+
+
+* Using this field is optional. 
+* Not all records will have contact information; but you can filter just tips with email addresses (which we have in a view, below).  
+
+
+### Notes
+
+An internal-use long text field for adding any notes about the record or communication with the tipster. 
+
+
+
+* Using this field is optional.  
+
+
+### Created
+
+This is an automated field with the date and time the record was created.
+
+
+## Views
+
+* **All tips:** Main grid view, showing all tips. 
+
+* **Unresolved tips:** Grid view, filtered to show tips that have not been marked as resolved. 
+
+* **Has contact info, needs reply:** Grid view, filtered to show tips that include an email address and have not been checked off as replied. 
+
+* **Assign to project:** Grid view, filtered to show unresolved tips that were not submitted about a particular project nor have been manually assigned to a project. You can use this view to easily organize unassigned tips. 
+
+* **Not assigned to collaborator:** Grid view, filtered to show unresolved tips that have not been assigned to a collaborator. You can use this view to make sure all tips have been assigned for review. 
+
+
+## Automations
+
+You may find it helpful to set up an automation to get notifications whenever a new record is created, aka, whenever someone submits a tip. 
 
 <TableOfContents index={9} />
