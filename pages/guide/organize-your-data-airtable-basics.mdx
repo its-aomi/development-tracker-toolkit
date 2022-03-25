@@ -2,27 +2,111 @@ import TableOfContents from "./TableOfContents";
 
 # Organize your data: Airtable basics
 
+Airtable is a low-code, “spreadsheet-database hybrid” platform with a freemium model. It can be used for standalone datasets or to collect information, like a spreadsheet, but also has more robust features like a database that allows you to link your different spreadsheets (called tables) and records contained in them to each other. 
+
+It has many different uses, but you see it[ used most often in journalism](https://rjionline.org/news/putting-airtable-to-work-in-your-newsroom/) for internal organization, like for [editorial calendars and planning](https://www.americanpressinstitute.org/publications/articles/7-ways-to-use-work-design-in-your-newsroom/), [impact tracking](https://resolvephilly.org/resources/customizable-impact-tracker), membership directories and[ DIY customer relationship management systems](https://memberfix.rocks/airtable-crm/). You can also easily [publish embeddable Airtable databases](https://knightfoundation.org/articles/local-journalist-in-need-these-grants-funds-guides-and-webinars-can-help/) and [forms](https://dcist.com/story/21/10/11/va-election-2021-mcauliffe-youngkin-covid/) online, so it can also be used for collecting information through engagement and audience surveying or [sharing out information](https://membershippuzzle.org/tools/database). Some data journalism projects have [used Airtable](https://source.opennews.org/articles/how-we-built-database-thousands-police-reports/) as part of [their workflows](https://sigmaawards.org/the-covid-tracking-project-at-the-atlantic/) for collecting and analyzing data. 
+
+
+## How the development tracker uses Airtable
+
+The development tracker includes two of those uses, collecting data internally and collecting reader-sourced tips through externally published forms. But we use Airtable in a third, more foundational way – as the content management system that powers the public-facing development tracker site, or news app. If you work in journalism, you almost certainly use a content management system to post to your outlet’s site – Wordpress is a common one, and there are [plenty others](https://www.poynter.org/business-work/2020/we-researched-five-cmss-to-kickstart-your-cms-transition/) like Arc Publishing, Ghost and custom-built CMSes. 
+
+In the development tracker, you don’t draft and publish posts as you would in a classic publishing CMS. Instead Airtable records, or rows of data, about real estate developments are each essentially a separate page on the site. The way the template site is coded allows those pages to be created, as well as main category pages that are coded separately. See TKTK section for more on how you go about “publishing” your pages. 
+
+We chose to use Airtable this way because when we started this project, we were familiar with Airtable; it is really strong for capturing and entering the large quantities of data we wanted to compile, with a low barrier to entry for a first-timer; and it was relatively simple, if you’re a developer, to structure for and connect to a public site. With the template site, we’ve also made it relatively easy for someone with less coding experience to take on the latter piece. 
+
+However, there are downsides to using Airtable. It is an atypical use for the platform, so there aren’t many public [resources](https://dev.to/sethu/how-to-build-a-website-using-gatsby-airtable-in-30-mins-42gm) out there if you want to do this on your own. And Airtable is not particularly designed to be used as a CMS, meaning all of the hookups to the site must be custom built and settings can’t easily be adjusted without also changing the code. We are currently exploring other CMS options that we may use to host the Detroit Development Tracker in the future – but everything we’ve looked at so far will include more custom work on the developer side, and we still think this Airtable setup will work just fine – or better – for newsrooms that don’t have the developer capacity to build their own backend. 
+
+
 ## Essential Airtable terminology
 
-If you are new to Airtable, we recommend you read their FAQs to familiarize yourself with the platform and how to use it. Below is a glossary of some essential Airtable terms we’ll use as we walk through setting up your data.
+If you are new to Airtable, we recommend you read their [getting started guides](https://support.airtable.com/hc/en-us/sections/360003922433-Getting-started-with-Airtable) to familiarize yourself with the platform and how to use it. Below is a glossary of some essential Airtable terms we’ll use as we walk through setting up your data. 
 
-* **Base:** A base is a database where you store all the information for one project. The development tracker uses one base. 
-* **Table:** Each base can have multiple tables with different content or data sets. The development tracker uses three tables. 
-* **Workspace:** Your Airtable homepage shows all your bases, housed in one or more workspaces. Workspaces help you organize your projects if you have many bases; you don’t need to adjust these yet if this is your first Airtable project.
-* **Record:** Each table in your base is made up of rows called records. Each record corresponds to an item. In the development tracker’s main “projects” table, each record corresponds to a real estate development project, and a published page on the public app. The tracker template projects base includes 10 sample records; you’ll have as many as your own dataset warrants.
-* **Field:** Each record has multiple columns, or fields, where you store individual pieces of data for the record. You use fields to structure your records; you can use them externally, like an address, or internally, like who is assigned to a record. The development tracker project base includes 19 fields. (TKTK CONFIRM)
-* **Field types:** Fields can be configured to allow different types of data, manually added or automatically generated. Airtable allows more than 20 field types. The ones we use in the development tracker base include single line text, paragraphs, link, record created and modified date, collaborator, checkbox, single select tags (that you can add manually), multiple select tags and link to another record. 
-* **Views:** Airtable allows you to see your tables in different formats, called views, which include grids (the default view, which looks like a spreadsheet), galleries (shows each record as a card), calendars and several others. You can use views to display your table in a more useful way or to only show select information, like a view that only shows records that need to be reviewed. Editing records in a view will automatically update the entire dataset. The development tracker template includes several named views on the left bar you can use or adjust. 
-* **Filters: **Paired with views, filters allow you to show only certain information from your entire database, by adding one or multiple conditions based on fields (like only show records if a certain field is empty, or contains a certain value).
-* **Grouping and sorting: **You can also group or sort records by certain fields for easier review. You can change it at any time, or set up different views that are sorted in particular ways. 
-* **Interfaces: **Interfaces are a bit like views – they take more setup but can be a more user-friendly way for collaborators to work with a portion of a base. You can configure them to display dashboards or certain records with a more visually appealing layout (that is easier to use if you’re doing extensive writing or editing). The development tracker base includes TKTK adjust interfaces for record creation, record review, a progress dashboard and a project dashboard (TKTK add tips).  
-* **Collaborators:** You can add collaborators with different levels of access. You can share an entire workspace with members of your organization or a whole base, with “creators” having permission to make any changes to the base and “editors” able to edit records and views but not reconfigure tables or fields. You can also share a base as read only or comment only, and share particular views for editing or read only if you don’t want to restrict access to certain fields or types of records. The share view function also allows you to embed on a public site. Once you have collaborators in your base, you can mention them in comments or use the collaborator field type to assign them records or action items.  
-* **Automations:** Airtable automations allow you to easily set up certain automated actions in other platforms, with a trigger you determine, like when a record is added or matches certain conditions. It works with apps including Slack, Twitter, Google Suite and others. In the Detroit Development Tracker, we use automations to send messages to a channel in our organization’s Slack whenever a new tip is submitted or a record is marked ready for review. Automations must be set up with your own accounts on other platforms; read more about how to add an automation [here](https://support.airtable.com/hc/en-us/articles/360050974153-Automations-overview).  
-* **Free vs. premium:** Airtable’s free tier is pretty robust, and we were able to build the Detroit Development Tracker without paying for premium, though there are some features that would make management easier if we upgrade. We may also hit our data limit soon, which would require us to upgrade. Here are some of the restrictions to keep in mind if you want to avoid paying for premium (see pricing and feature comparison [here](https://www.airtable.com/pricing)): 
-    * Records: Your base can have max 1,200 records and 2GB of attachments. 
-    * Collaborators: You can have five collaborators with editor permissions or higher. 
-    * Revisions: You can see two weeks of revisions on records.
-    * Apps: Airtable’s in-house and third-party apps give you more functionality on bases. You can have one for free per base. (The development tracker does not use any apps, but you could configure one.)
-    * Automations: You can set up as many automations as you want, but there is a limit of 100 runs (i.e., every time it is triggered to send a Slack message) per month on the free plan. If you use automations extensively for record review, submissions and other workflows, you may hit that limit easily. 
+ 
+
+
+### Base
+
+A base is a database where you store all the information for one project. The development tracker uses one base. 
+
+
+### Table
+
+Each base can have multiple tables with different content or data sets. The development tracker uses three tables. 
+
+
+### Workspace
+
+Your Airtable homepage shows all your bases, housed in one or more workspaces. Workspaces help you organize your projects if you have many bases; you don’t need to adjust these yet if this is your first Airtable project.
+
+
+### Record
+
+Each table in your base is made up of rows called records. Each record corresponds to an item. In the development tracker’s main “projects” table, each record corresponds to a real estate development project, and a published page on the public app. The tracker template projects base includes 10 sample records; you’ll have as many as your own dataset warrants.
+
+
+### Field
+
+Each record has multiple columns, or fields, where you store individual pieces of data for the record. You use fields to structure your records; you can use them externally, like an address, or internally, like who is assigned to a record. 
+
+
+### Field types
+
+Fields can be configured to allow different types of data, manually added or automatically generated. Airtable allows more than 20 field types. The ones we use in the development tracker base include single line text, paragraphs, record created and modified date, collaborator, checkbox, single select tags (that you can add manually), multiple select tags and link to another record. 
+
+
+### Views
+
+Airtable allows you to see your tables in different formats, called views, which include grids (the default view, which looks like a spreadsheet), galleries (shows each record as a card), calendars and several others. You can use views to display your table in a more useful way or to only show select information, like a view that only shows records that need to be reviewed. Editing records in a view will automatically update the entire dataset. 
+
+The development tracker template includes several named views on the left bar you can use or adjust. 
+
+
+### Filters
+
+Paired with views, filters allow you to show only certain information from your entire database, by adding one or multiple conditions based on fields (like only show records if a certain field is empty, or contains a certain value).
+
+
+### Grouping and sorting
+
+You can also group or sort records by certain fields for easier review. You can change it at any time, or set up different views that are sorted in particular ways. 
+
+
+### Interfaces
+
+Interfaces are a bit like views – they take more setup but can be a more user-friendly way for collaborators to work with a portion of a base. You can configure them to display dashboards or certain records with a more visually appealing layout (that is easier to use if you’re doing extensive writing or editing). 
+
+The development tracker template includes several interfaces that work well for adding or editing data and seeing what’s included in your base at a glance. 
+
+
+### Collaborators
+
+You can add collaborators with different levels of access. You can share an entire workspace with members of your organization or a whole base, with “creators” having permission to make any changes to the base and “editors” able to edit records and views but not reconfigure tables or fields. 
+
+You can also share a base as read only or comment only, and share particular views for editing or read only if you don’t want to restrict access to certain fields or types of records. The share view function also allows you to embed on a public site. 
+
+Once you have collaborators in your base, you can mention them in comments or use the collaborator field type to assign them records or action items.  
+
+
+### Automations
+
+Airtable automations allow you to easily set up certain automated actions in other platforms, with a trigger you determine, like when a record is added or matches certain conditions. It works with apps including Slack, Twitter, Google Suite and others. 
+
+In the Detroit Development Tracker, we use automations to send messages to a channel in our organization’s Slack whenever a new tip is submitted or a record is marked ready for review. Automations must be set up with your own accounts on other platforms; read more about how to add an automation [here](https://support.airtable.com/hc/en-us/articles/360050974153-Automations-overview).  
+
+
+## Staying in Airtable’s free tier
+
+Airtable’s free tier is pretty robust, and we were able to build the Detroit Development Tracker without paying for premium, though there are some features that would make management easier if we were to upgrade. 
+
+Here are some of the restrictions to keep in mind if you want to avoid paying for premium (see pricing and feature comparison [here](https://www.airtable.com/pricing)): 
+
+
+* **Records:** Your base can have max 1,200 records and 2GB of attachments. 
+* **Collaborators:** You can have five collaborators with editor permissions or higher. 
+* **Revisions:** You can see two weeks of revisions on records.
+* **Apps:** Airtable’s in-house and third-party apps give you more functionality on bases. You can have one for free per base. (The development tracker does not use any apps, but you could configure one.)
+* **Automations:** You can set up as many automations as you want, but there is a limit of 100 runs (i.e., every time it is triggered to send a Slack message) per month on the free plan. If you use automations extensively for record review, submissions and other workflows, you may hit that limit easily. 
+
 
 <TableOfContents index={5} />
