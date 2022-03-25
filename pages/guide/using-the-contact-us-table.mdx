@@ -1,5 +1,94 @@
 import TableOfContents from "./TableOfContents";
 
 # Using the Contact Us table
-This section is coming soon in spring 2022.
+The Contact Us table is connected to the site’s contact page form, so people can contact you about the project. Each record represents a message sent via the contact form. You will mostly be using this table to review messages and track their status.
+
+The table also includes a customizable form view you can use to solicit feedback – more on that in the Views section. 
+
+
+## Fields
+
+
+### Name
+
+Linked to the name field on the site contact form.  
+
+
+
+* This will pull in automatically when someone submits a message. It is not a required field, so may be blank.
+
+
+### Email
+
+Linked to the email address field on the site contact form. 
+
+
+
+* This will pull in automatically when someone submits a message. It is not a required field, so may be blank.
+
+
+### Message
+
+Linked to the message field on the site contact form. 
+
+
+
+* This will pull in automatically when someone submits a message.
+
+
+### Category or issue 
+
+A multi select field you can use internally to categorize messages. 
+
+
+
+* This is an optional field you can use to manually assign a topic or category to a person’s message. The template includes five options: Issue in site text, issue in site data, issue in site function or design, comment and offer. You can edit, delete or add options depending on your needs.  
+* It may be helpful for sorting, reporting out about use of the tracker, or assigning issues to collaborators. 
+
+
+### Assigned to
+
+A collaborators field you can use internally to assign messages for follow up. 
+
+
+
+* This is an optional field you can use to manually assign specific messages to collaborators to address an issue and/or follow up with the person who submitted the message. 
+
+
+### Replied
+
+A checkbox you can use to track status of messages. 
+
+
+
+* This is an optional field you can use to keep track of which messages have been responded to. 
+
+
+### Notes
+
+This is a long text field you can use for internal notes. 
+
+
+
+* This is an optional field you can use if you have additional notes about a message or the communication. 
+
+
+### Created
+
+This is an automated field with the date and time the record was created.
+
+
+## Views
+
+
+
+* **Grid view:** Main view, shows all fields. Each record is a contact form submission.
+* **Share your feedback:** A form view you can share via private link, public link or publish as an embeddable form on your site. You can edit and use this form to get feedback on your tracker that will be stored alongside contact form submissions; we found this form helpful in the pre-launch phase. 
+* **Has contact info, needs reply:** A grid view filtered to only show records that include contact information and have not yet been checked off as replied to. Use this to make sure you have replied to everyone who contacts you. 
+
+
+## Automations
+
+You may find it helpful to set up an automation to get notifications whenever a new record is created, aka, whenever someone contacts you via the contact page or the feedback form. 
+
 <TableOfContents index={8} />
