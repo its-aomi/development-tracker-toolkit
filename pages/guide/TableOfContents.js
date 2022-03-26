@@ -55,13 +55,17 @@ export const pages = [
     name: "Publishing the site",
     href: "/guide/publishing-the-site",
   },
-  {
-    name: "Harnessing reader engagement",
-    href: "/guide/harnessing-reader-engagement",
-  },
-  {
+   {
     name: "Managing your development tracker",
     href: "/guide/managing-your-development-tracker",
+  },
+  {
+    name: "Harnessing public engagement and support",
+    href: "/guide/harnessing-reader-engagement",
+  },
+    {
+    name: "Launching your tracker for the public",
+    href: "/guide/launching-your-tracker",
   },
   {
     name: "Get help building your tracker",
