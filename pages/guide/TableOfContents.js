@@ -68,8 +68,8 @@ export const pages = [
     href: "/guide/launching-your-tracker",
   },
   {
-    name: "Get help building your tracker",
-    href: "/guide/get-help-building-your-tracker",
+    name: "Getting in touch with us",
+    href: "/guide/getting-in-touch-with-us",
   },
 ];
 
