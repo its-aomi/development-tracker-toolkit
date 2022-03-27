@@ -3,16 +3,56 @@ import TableOfContents from "./TableOfContents";
 
 # How to use this guide
 
-## What will it help you do, and who is it for?
+This guide will walk you through the process of creating a simple data-driven news app to track real estate development in your area. It is designed to be used by journalists at small, local news outlets who want to serve and engage readers around development in their community. It assumes you have the capacity to research, manage and vet a data journalism project, as well as some development experience (or the willingness to learn and/or hire for it on a project basis). 
 
-This guide walks through the process of creating a simple data-driven news app to track real estate development by collecting data and setting it up in Airtable, connecting it to a front-end site, with open-source templates you can use and modify.
 
-It also includes tips for managing your app and data, as well as links to other helpful resources
+## What’s in the tracker you’ll be building
 
-It is designed for small publishers who want to serve and engage readers around development in their community. It assumes you have the capacity to research, manage and vet a data journalism project, as well as some development experience, or the ability to hire for it on a project basis.
+The template site that hosts this guide will serve as the public-facing tracker once you set it up and customize it for your outlet. It includes:
 
-It is based on our experience with the Detroit Development Tracker and will be most applicable for cases where you want to host many records that users can search or browse and look up more information. It will work for records tied to locations or not TK. It includes reader engagement functions, so you can include callouts and users can submit tips (in our case, about real estate development activity; but has applications if you’re trying to continue reporting on a subject TK ProPublica example). It will work for static/complete data sets as well as ones you create or need to update ongoing
 
-Simple setup if you want to do 1:1 - more customization requires more original coding. Airtable great for simpler projects and easy data management – more complex projects not necessarily served by this setup - and we are considering moving the Detroit Development Tracker to a new content management system.
+
+* A homepage, with a short description of the development tracker.
+* A map page, where you can search for and browse real estate development projects on a map.
+* A projects page, where you can see a list of all projects or search for particular projects by keyword. 
+* A tip submission page, with a form your readers can use to share information or questions about local real estate developments in their neighborhoods. 
+* An about page, where you will share more background about the project. 
+* A contact page, where you can tell users how to get in touch with you. 
+* Multiple real estate projects pages, each one with details about a single development, including status, use type and photos. 
+    * The template site includes about 10 sample project pages. Your site will include as many pages as your data allows. 
+
+
+## How the tracker site works
+
+Data is collected in an Airtable base, which is used as the content management system for the tracker. 
+
+The tracker site is built with Next.js, a development framework that uses React. Airtable’s API key is used to connect your Airtable base to the site, and each row of data about a single real estate development project becomes a page on the tracker site. The site uses several additional tools, like Mapbox, and is hosted on Netlify. 
+
+The template site and Airtable base are pre-configured to limit the amount of coding you’ll need to do to launch your own tracker, but you will need to do some. All of those steps are included in this guide. 
+
+
+## What’s in this guide 
+
+This guide starts with some initial considerations: [what you will need](https://airtable-tracker-toolkit.netlify.app/guide/what-you-will-need) to complete this project and [initial questions](https://airtable-tracker-toolkit.netlify.app/guide/initial-questions-to-ask) you should ask as you’re planning to bring a development tracker to your newsroom. 
+
+Then, it discusses what kinds of [data you’ll need to gather](https://airtable-tracker-toolkit.netlify.app/guide/starting-with-the-data) and how you can go about collecting it. 
+
+Next, it walks you through [using Airtable](https://airtable-tracker-toolkit.netlify.app/guide/organize-your-data-airtable-basics), creating [your copy of the Airtable template](https://airtable-tracker-toolkit.netlify.app/guide/setting-up-your-airtable-base) and how you will enter your data there. 
+
+Then, you will [set up your tracker site](https://airtable-tracker-toolkit.netlify.app/guide/setting-up-the-site) and [customize necessary components](https://airtable-tracker-toolkit.netlify.app/guide/customizing-the-site). After that, you will be shown how to [publish the tracker](https://airtable-tracker-toolkit.netlify.app/guide/publishing-the-site) to your own website. 
+
+The following sections cover [managing your tracker](https://airtable-tracker-toolkit.netlify.app/guide/managing-your-development-tracker) and harnessing public [engagement](https://airtable-tracker-toolkit.netlify.app/guide/harnessing-reader-engagement) and support. Finally, there are some tips for [launching your tracker](https://airtable-tracker-toolkit.netlify.app/guide/launching-your-tracker) to your audience and how to [get in touch with us](https://airtable-tracker-toolkit.netlify.app/guide/getting-in-touch-with-us) if you have questions or suggestions. 
+
+
+## Limitations 
+
+The guide is based on our experience with the Detroit Development Tracker; the template site and data structure are based on its format. 
+
+The site includes reader engagement functions, so you can include callouts and users can submit tips. We have found that the submission function and readers’ willingness to use it is vital to the tracker’s success. If reader engagement is not something your newsroom prioritizes, it may be difficult to maintain your tracker. 
+
+And if your community’s real estate development landscape and available data – or your readers’ needs around development information – look very different than ours, you may have difficulty implementing the tracker template. The tracker is open-source, meaning you could customize it as much as you want, but most changes you would want to make to the data structure would require changing your Airtable base and therefore custom coding. Changes to the public-facing site will also require custom coding; you can easily adjust text and we walk you through some customizations, but adding new functions or pages will require individual work. 
+
+One caveat: The limitations we’ve found using Airtable have prompted us to explore other systems to host data for the Detroit Development Tracker in the future, aka we may stop using the structure we’re showing you how to implement in this guide. Still, these options will include more custom work on the developer side, and we still think the setup in this guide will work well, particularly for newsrooms that don’t have the developer capacity to build their own backend.
+
 
 <TableOfContents index={1} />
