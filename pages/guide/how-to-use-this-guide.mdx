@@ -21,6 +21,28 @@ The template site that hosts this guide will serve as the public-facing tracker 
 * Multiple real estate projects [pages](./projects/the-rectory), each one with details about a single development, including status, use type and photos. 
     * The template site includes about 10 sample project pages. Your site will include as many pages as your data allows. 
 
+## Why build a news app
+When you think of data journalism you may picture obtaining and analyzing existing datasets more than creating your own – or creating a dataset to find answers that serve a particular article or reporting series. Our primary intended use for the development tracker is not to fuel news articles; instead, it is meant to be a long-lasting tool that serves readers alongside more traditional journalism. 
+
+However, the tracker can still benefit real estate reporting, like if you receive reader tips that alert you to projects that have not yet been reported on. And once you have your database, you can analyze it like you would any other, surfacing themes that warrant further reporting, like development activity concentrated in a particular area of the city; a developer who has multiple stalled projects or high levels of subsidies; or an increase in residential projects, rehabs or other types of buildings. You may pick up on trends in the development community or in your local government’s treatment of projects.
+
+### How a news app works for readers
+
+“News apps encourage readers to interact with data in a context that is meaningful to them: looking up crime trends in their area, checking the safety records of their local doctor, or searching political contributions to their candidate of choice. **More than just high-tech infographics, the best news apps are durable products. They live outside the news cycle**, often by helping readers solve real-world problems, or answering questions in such a useful or novel way that they become enduring resources.” 
+
+_From “[The Data Journalism Handbook 1](https://datajournalism.com/read/handbook/one/delivering-data/how-to-build-a-news-app),” edited by Jonathan Gray, Lucy Chambers and Liliana Bounegru_
+
+### The difference between news apps and graphics
+
+“Graphics tend to tell a single story while news applications tell many -- specifically, news applications let readers see how they're personally affected.
+
+“Graphics tend to run in the browser while news applications tend to require multiple trips to some backend or a runtime on a server.” 
+
+_From “[ProPublica Data Style Guide](https://github.com/propublica/guides/blob/master/news-apps.md),” by Scott Klein_
+
+This development tracker does actually fit the second half of this definition: it is set up to not require a backend or server. If our dataset were much larger, we wouldn't want to do that pre-generation of pages, instead using a backend which would fetch data on-demand from a database and only build a page when the end user requests that page. 
+
+You don’t have to know too much about this distinction at the moment, but in general, the dataset's size should influence your site architecture.
 
 ## How the tracker site works
 
