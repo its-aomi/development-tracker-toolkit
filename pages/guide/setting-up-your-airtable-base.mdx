@@ -5,7 +5,7 @@ import TableOfContents from "./TableOfContents";
 
 
 1. Create a free Airtable account at [https://airtable.com/signup](https://airtable.com/signup) if you do not have one. 
-2. Go to “[Local real estate development tracker](https://www.airtable.com/universe/exp1PtSWxyPHYGMIk/local-development-tracker)” template base on Airtable Universe link base on universe, click “copy base” and add it to “My First Workspace” (or another workspace if you are already using Airtable). You can now open your own copy of the template base, add your data and make changes. Data you store here or changes you make don’t affect the published template and will be private until you share your base with others and/or connect it to a public-facing site.  
+2. Go to the “[Local real estate development tracker](https://www.airtable.com/universe/exp1PtSWxyPHYGMIk/local-development-tracker)” template base on Airtable Universe, click “copy base” and add it to “My First Workspace” (or another workspace if you are already using Airtable). You can now open your own copy of the template base, add your data and make changes. Data you store here or changes you make don’t affect the published template and will be private until you share your base with others and/or connect it to a public-facing site.  
 3. Invite anyone else working on the project to the [base](https://support.airtable.com/hc/en-us/articles/202625759-Adding-a-base-collaborator) (or [workspace](https://support.airtable.com/hc/en-us/articles/203313505-Adding-a-workspace-collaborator)) as a collaborator with editor or creator permissions.  
 4. Before you start adding your own data, review and [delete](https://support.airtable.com/hc/en-us/articles/202584459-Deleting-records) the sample records in all three tables: Projects, Contact Us and Tips. 
 5. Don’t delete, add or modify any fields or tables before reading the following section. 
@@ -17,70 +17,51 @@ The Airtable base will be linked to your public-facing site. Different elements 
 
 **Don’t make changes to:**
 
-The names of the tables (Projects, Contact us and Tips) or their settings. 
+* The names of the tables (Projects, Contact us and Tips) or their settings. 
+   * These are important ones not to change, since references to the specific names are hardcoded into the site.
+
+* The configuration of any fields that contain info that displays on or is submitted from the public site.
+   * This includes the following fields in the Projects table: Name, Slug, Address, Build type, Status, Uses, Images, Image Caption and Record Status
+   * And the following fields in the Contact us table: Name, Email, Message 
+   * And the following fields in the Tips table: Email, Report, Address, Attachments
+   * Don’t change their name, the field type or other options. 
+   * Do not delete them.
 
 
-
-* These are important ones not to change, since references to the specific names are hardcoded into the site.
-
-Any fields that contain info that displays on or is submitted from the public site. 
-
-
-
-* Don’t change their name, the field type or other options. 
-* Do not delete them: If you do not use a certain field, you can instead [hide](https://support.airtable.com/hc/en-us/articles/360000367008-Hiding-fields-and-field-visibility-overview) it from your views.
-* This includes the following fields in the Projects table: Name, Slug, Address, Build type, Status, Uses, Images, Image Caption, Record Status
-* And the following fields in the Contact us table: Name, Email, Message 
-* And the following fields in the Tips table: Email, Report, Address, Attachments
-
-Any field that is linked to other records in the base. 
-
-
-
-* Don’t change their name, the field type or other options. 
-* Do not delete them: If you do not use a certain field, you can instead [hide](https://support.airtable.com/hc/en-us/articles/360000367008-Hiding-fields-and-field-visibility-overview) it from your views.
-* This includes the following fields in the Projects table: Reports, Tips
-* And the following fields in the Tips table: Projects
+* Any field that is linked to other records in the base. 
+   * This includes the following fields in the Projects table: Reports, Tips
+   * And the following fields in the Tips table: Projects 
+   * Don’t change their name, the field type or other options. 
+   * Do not delete them.
 
 **You _can_ make these changes without affecting the site:**
 
-You can add a new table to your base to upload a different dataset and it will not affect the main site. 
+* You can add a new table to your base to upload a different dataset and it will not affect the main site. 
+   * You might want to add a base that you use internally to organize and track your data sources. 
+   * Or you may want to bring in a whole new type of linked data to your internal system or the public site, but that would require additional configuration of the Airtable base and site code.
 
+* You can adjust fields that are only used internally. 
+   * This includes the following fields in the Projects table: Assigned to, Notes, Record created, Last modified
+   * And the following fields in the Contact Us table: Category or Issue, Assigned to, Replied, Notes, Created
+   * And the following fields in the Tips table: Project - manual add, Assigned to, Tip status, Replied?, Notes, Created
+   * You can change their name, type, settings or delete them entirely without affecting the site. 
 
+* You can add new fields. 
+   * If there are other types of data you want to track or are included in a dataset you are importing – or another type of field you want to use for internal workflows – you can add additional fields to any table. 
+   * Information in these fields will not be displayed on the public site without additional coding.  
 
-* You might want to add a base that you use internally to organize and track your data sources. Or you may want to bring in a whole new type of linked data to your internal system or the public site (for example, a data set of public meetings that address developments in your Projects table), but that would require additional configuration of the Airtable base and site code.
+* You can change the selection options available (not other field type options) in certain single and multi select fields.
+   * This includes the following fields in the Projects table: Build type, Status, Uses
+   * In the Record Status field, you can change options except the Published option, which must remain as is. 
+   * Here’s how to adjust options for [single](https://support.airtable.com/hc/en-us/articles/360042806873-Single-select-field) and [multi select fields](https://support.airtable.com/hc/en-us/articles/360042806893-Multiple-select-field).
 
-You can adjust fields that are only used internally. 
+* You can add, delete or edit views or interfaces for each table. 
 
+* You can adjust filtering, grouping and sorting within each table. 
 
+* You can add automations and collaborators. 
 
-* You can change their name, type, settings or delete them entirely without affecting the site. 
-* This includes the following fields in the Projects table: Assigned to, Notes, Record created, Last modified
-* And the following fields in the Contact us table: Category or Issue, Assigned to, Replied, Notes, Created
-* And the following fields in the Tips table: Project - manual add, Assigned to, Tip status, Replied?, Notes, Created
-
-You can add new fields. 
-
-
-
-* If there are other types of data you want to track or are included in a dataset you are importing – or another type of field you want to use for internal workflows – you can add additional fields to any table. 
-* Information in these fields will not be displayed on the public site without additional coding.  
-
-You can change the selection options available (not other field type options) in certain single and multi select fields.
-
-
-
-* This includes the following fields in the Projects table: Build type, Status, Uses
-    * In the Record Status field, you can change options except the Published option, which must remain as is. 
-    * Here’s how to adjust options for [single](https://support.airtable.com/hc/en-us/articles/360042806873-Single-select-field) and [multi select fields](https://support.airtable.com/hc/en-us/articles/360042806893-Multiple-select-field).
-
-You can add, delete or edit views or interfaces for each table. 
-
-You can adjust filtering, grouping and sorting within each table. 
-
-You can add automations and collaborators. 
-
-The next three sections walk you through using the three tables in your Airtable base.  
+*The next three sections walk you through using the three tables in your Airtable base.* 
 
 
 <TableOfContents index={6} />
