@@ -40,7 +40,7 @@ _From “[The Data Journalism Handbook 1](https://datajournalism.com/read/handbo
 
 _From “[ProPublica Data Style Guide](https://github.com/propublica/guides/blob/master/news-apps.md),” by Scott Klein_
 
-This development tracker does not actually fit the second half of this definition: it is set up to **not** require a backend or server. If our dataset were much larger, we wouldn't want to do that pre-generation of pages, instead using a backend which would fetch data on-demand from a database and only build a page when the end user requests that page. 
+This development tracker does not actually fit the second half of this definition: It is set up to **not** require a backend or server. If your dataset gets too large, you wouldn't want to rely on pre-generation of pages, and instead use a backend that would fetch data on demand from a database and only build a page when the end user requests that page. 
 
 You don’t have to know too much about this distinction at the moment, but in general, the dataset's size should influence your site architecture.
 
@@ -70,11 +70,11 @@ The following sections cover [managing your tracker](./guide/managing-your-devel
 
 The guide is based on our experience with the Detroit Development Tracker; the template site and data structure are based on its format. 
 
-The site includes reader engagement functions, so you can include callouts and users can submit tips. We have found that the submission function and readers’ willingness to use it is vital to the tracker’s success. If reader engagement is not something your newsroom prioritizes, it may be difficult to maintain your tracker. 
+The site includes reader engagement functions, so you can include callouts and users can submit tips. We have found that the submission function and readers’ willingness to use it are vital to the tracker’s success. If reader engagement is not something your newsroom prioritizes, it may be difficult to maintain your tracker. 
 
 And if your community’s real estate development landscape and available data – or your readers’ needs around development information – look very different than ours, you may have difficulty implementing the tracker template. The tracker is open-source, meaning you could customize it as much as you want, but most changes you would want to make to the data structure would require changing your Airtable base and therefore custom coding. Changes to the public-facing site will also require custom coding; you can easily adjust text and we walk you through some customizations, but adding new functions or pages will require individual work. 
 
-One caveat: The limitations we’ve found using Airtable have prompted us to explore other systems to host data for the Detroit Development Tracker in the future, aka we may stop using the structure we’re showing you how to implement in this guide. Still, these options will include more custom work on the developer side, and we still think the setup in this guide will work well, particularly for newsrooms that don’t have the developer capacity to build their own backend.
+A final caveat: The limitations we’ve found using Airtable have prompted us to explore other systems to store data for the Detroit Development Tracker in the future, aka we may stop using the structure we’re showing you how to implement in this guide. Still, these options will include more custom work on the developer side, and we still think the setup in this guide will work well, particularly for newsrooms that don’t have the developer capacity to build their own backend.
 
 
 <TableOfContents index={1} />
