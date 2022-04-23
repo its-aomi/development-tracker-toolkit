@@ -2,7 +2,7 @@ import TableOfContents from "./TableOfContents";
 
 # Customizing the site
 
-Follow these steps to customize your version of the tracker to pull in the correct geography, as well as your publication's name and your site name in areas across the site. Here, you can also edit the copy that appears on main pages of the site (the homepage, tips page, about page and contact page).
+Follow these steps to customize your version of the tracker to pull in the correct geography, as well as your publication's name and your site name in areas across the site. Here, you can also edit the copy that appears on main pages of the site (the homepage and about page).
 
 ## Configuring `toolkit.config.js`
 
@@ -70,13 +70,15 @@ You will need to write in Markdown for formatting and links to render properly. 
 
 ### `index.mdx`
 
-This is your site's homepage.
+This is your site's homepage. Edit the text in this file to change what displays when someone comes to the homepage of your site.
 
 ### `about.mdx`
 
-This is the site's About page. You can edit text within sections we've included, like your audience can use the site and who can collaborate on this project. **Please keep the final section, "[Credits](./about#credits)," on your site** -- it includes creator credits and a link back to this toolkit.
+This is the site's About page. You can edit text within sections we've included, like how your audience can use the site and who can collaborate on this project. **Please keep the final section, "[Credits](./about#credits)," on your site** -- it includes creator credits and a link back to this toolkit.
 
-### `TKTK`
+### `submit-a-tip.js` and `contact-us.js`
+
+These are [JavaScript files](https://docs.fileformat.com/web/js/) (also found under pages in your GitHub repository) for the Submit a Tip and Contact Us forms on the tracker site. You can edit these files to adjust the introductory text on those two pages, but be careful not to edit any other code or make other adjustments to those files unless you are familiar with JavaScript. 
 
 *Now that you have your site ready, the next section will show you how to publish your site to the web, connect it to your outlet's domain and regularly republish it to capture updates to your data in Airtable.* 
 <TableOfContents index={11} />
