@@ -246,13 +246,13 @@ footer span,
 }
 
 /* submit a tip */
-.submit-form div {
+.submit-form > div {
   @apply flex;
   @apply flex-col;
   @apply mb-6;
 }
 
-.submit-form label {
+.submit-form label:not(.nostyle) {
   @apply text-sm;
   @apply md:text-lg;
   @apply leading-6;
@@ -263,7 +263,7 @@ footer span,
   @apply bg-opacity-25;
 }
 
-.submit-form input {
+.submit-form input, .submit-form radiogroup {
   @apply text-sm;
   @apply md:text-base;
   @apply leading-6;
