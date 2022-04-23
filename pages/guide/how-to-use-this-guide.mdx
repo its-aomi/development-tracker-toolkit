@@ -24,7 +24,7 @@ The template site that hosts this guide will serve as the public-facing tracker 
 ## Why build a news app
 When you think of data journalism you may picture obtaining and analyzing existing datasets more than creating your own – or creating a dataset to find answers that serve a particular article or reporting series. Our primary intended use for the development tracker is not to fuel news articles; instead, it is meant to be a long-lasting tool that serves readers alongside more traditional journalism. 
 
-However, the tracker can still benefit real estate reporting, like if you receive reader tips that alert you to projects that have not yet been reported on. And once you have your database, you can analyze it like you would any other, surfacing themes that warrant further reporting, like development activity concentrated in a particular area of the city; a developer who has multiple stalled projects or high levels of subsidies; or an increase in residential projects, rehabs or other types of buildings. You may pick up on trends in the development community or in your local government’s treatment of projects.
+However, the tracker can still benefit real estate reporting, for example, if you receive reader tips that alert you to projects that have not yet been reported on. And once you have your database, you can analyze it like you would any other, identifying themes that warrant further reporting, like development activity concentrated in a particular area of the city; a developer who has multiple stalled projects or high levels of subsidies; or an increase in residential projects, rehabs or other types of buildings. You may pick up on trends in the development community or in your local government’s treatment of projects.
 
 ### How a news app works for readers
 
@@ -34,7 +34,7 @@ _From “[The Data Journalism Handbook 1](https://datajournalism.com/read/handbo
 
 ### The difference between news apps and graphics
 
-“Graphics tend to tell a single story while news applications tell many -- specifically, news applications let readers see how they're personally affected.
+“Graphics tend to tell a single story while news applications tell many — specifically, news applications let readers see how they're personally affected.
 
 “Graphics tend to run in the browser while news applications tend to require multiple trips to some backend or a runtime on a server.” 
 
@@ -48,22 +48,22 @@ You don’t have to know too much about this distinction at the moment, but in g
 
 Data is collected in an Airtable base, which is used as the content management system for the tracker. 
 
-The tracker site is built with Next.js, a development framework that uses React. Airtable’s API key is used to connect your Airtable base to the site, and each row of data about a single real estate development project becomes a page on the tracker site. The site uses several additional tools, like Mapbox, and is hosted on Netlify. 
+The tracker site is built with [Next.js](https://nextjs.org/), a [development framework](https://www.toolbox.com/tech/devops/blogs/what-is-a-development-framework-why-use-a-development-framework-042911/) that uses [React](https://reactjs.org/), a JavaScript library for building user interfaces. Airtable’s API key is used to connect your Airtable base to the site, and each row of data about a single real estate development project becomes a page on the tracker site. The site uses several additional tools, like Mapbox, and is hosted on Netlify. We'll walk you through our narrow uses of these programs and tools later in this guide. 
 
 The template site and Airtable base are pre-configured to limit the amount of coding you’ll need to do to launch your own tracker, but you will need to do some. All of those steps are included in this guide. 
 
 
 ## What’s in this guide 
 
-This guide starts with some initial considerations: [what you will need](./guide/what-you-will-need) to complete this project and [initial questions](./guide/initial-questions-to-ask) you should ask as you’re planning to bring a development tracker to your newsroom. 
+This guide starts with some initial considerations: [what you will need](./what-you-will-need) to complete this project and [initial questions](./initial-questions-to-ask) you should ask as you’re planning to bring a development tracker to your newsroom. 
 
-Then, it discusses what kinds of [data you’ll need to gather](./guide/starting-with-the-data) and how you can go about collecting it. 
+Then, it discusses what kinds of [data you’ll need to gather](./starting-with-the-data) and how you can go about collecting it. 
 
-Next, it walks you through [using Airtable](./guide/organize-your-data-airtable-basics), creating [your copy of the Airtable template](./guide/setting-up-your-airtable-base) and how you will enter your data there. 
+Next, it walks you through [using Airtable](./organize-your-data-airtable-basics), creating [your copy of the Airtable template](./setting-up-your-airtable-base) and how you will enter your data there. 
 
-Then, you will [set up your tracker site](./guide/setting-up-the-site) and [customize necessary components](./guide/customizing-the-site). After that, you will be shown how to [publish the tracker](./guide/publishing-the-site) to your own website. 
+Then, you will [set up your tracker site](./setting-up-the-site) and [customize necessary components](./customizing-the-site). After that, you will be shown how to [publish the tracker](./publishing-the-site) to your own website. 
 
-The following sections cover [managing your tracker](./guide/managing-your-development-tracker) and harnessing public [engagement](./guide/harnessing-reader-engagement) and support. Finally, there are some tips for [launching your tracker](./guide/launching-your-tracker) to your audience and how to [get in touch with us](./guide/getting-in-touch-with-us) if you have questions or suggestions. 
+The following sections cover [managing your tracker](./managing-your-development-tracker) and harnessing public [engagement](./harnessing-reader-engagement) and support. Finally, there are some tips for [launching your tracker](./launching-your-tracker) to your audience and how to [get in touch with us](./getting-in-touch-with-us) if you have questions or suggestions. 
 
 
 ## Limitations 
