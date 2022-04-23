@@ -5,37 +5,43 @@ import netlifyRepoEnvVar from "./images/publishing-the-site/netlify-repo-env-var
 
 # Publishing the site
 
-You've finished making some changes to the data in [your base], and you're ready to publish your site to the internet.
+Once you've gotten the template site up and running with your local customizations and added some data in your Airtable base, you're ready to publish your site to the internet.
 
 The easiest way to get your site up and running is with a hosting provider, such as Netlify.
 
 ## Configuring Netlify
 
-1. [Sign up](https://app.netlify.com/signup) for a Netlify account - it's easiest if you log in with GitHub, since you'll eventually link your GitHub site repository to your Netlify account.
-2. Once in Netlify, click the "Add new site" dropdown and choose "Import an existing project".
-3. You'll be prompted to log in to GitHub.
-4. Next, you can choose a repository to build the site from. Choose the development tracker repository that you created.
-5. Use the following settings:
+* [Sign up](https://app.netlify.com/signup) for a Netlify account - it's easiest if you log in with GitHub, since you'll eventually link your GitHub site repository to your Netlify account.
+* Once in Netlify, click the "Add new site" dropdown and choose "Import an existing project."
+* You'll be prompted to log in to GitHub.
+* Next, you can choose a repository to build the site from. Choose the development tracker repository that you created.
+* Use the following settings:
 
 <Image src={netlifyRepoBuildSettings} width={575} height={500} />
 
-6. Under advanced build settings, add your environment variables, from your `.env.development.local` file. 
+* Under advanced build settings, add your environment variables, from your `.env.development.local` file. 
 
 
 Note: The `RECORD_FILTER` will be wrapped in double quotes in your `.env.development.local` file, but you should remove those for the Netlify environment variable. Also, be sure that the quotation marks in the `RECORD_FILTER` are straight quotes, and not curly quotes.
 
 <Image src={netlifyRepoEnvVar} width={600} height={600} />
 
-7. Finally, click 'Deploy site'.
-8. Netlify will build your site, and deploy it! This process takes a few minutes.
+* Finally, click "Deploy site."
+* Netlify will build your site, and deploy it! This process takes a few minutes.
 
 ## Configuring your site's domain
 
-In Netlify, navigate to your site settings. Under "Domain management > Domains" from the sidebar, click "Add custom domain".
+* In Netlify, navigate to domain settings. Here, you can edit the URL of your Netlify site, which is a functional link you could use for your public site. However, you likely want to host the development tracker on your publication’s site. To do this, click "Add custom domain."
+* Register your custom domain with Netlify [using these instructions](https://docs.netlify.com/domains-https/custom-domains/#assign-a-domain-to-a-site).
+* Typically, you'll want to keep your existing DNS records, but [add a new DNS record](https://docs.netlify.com/domains-https/custom-domains/configure-external-dns/) on your current domain provider which points to your Netlify site.
 
-Register your custom domain with Netlify [using these instructions](https://docs.netlify.com/domains-https/custom-domains/#assign-a-domain-to-a-site).
+## Adding your site URL to `toolkit.config.js`
+* Navigate back to the `toolkit.config.js` file in VSCode and replace the template site URL with your tracker's custom URL or the public Netlify link here: `siteUrl: https://local-development-tracker-toolkit.netlify.app`.
 
-Typically, you'll want to keep your existing DNS records, but [add a new DNS record](https://docs.netlify.com/domains-https/custom-domains/configure-external-dns/) on your current domain provider which points to your Netlify site.
+## Commit changes
+* In VSCode, make sure you commit all changes you've made to your site. Follow these [instructions for committing changes](https://zeroesandones.medium.com/how-to-commit-and-push-your-changes-to-your-github-repository-in-vscode-77a7a3d7dd02) in VSCode. 
+* You should now have a live site! 
+
 
 ## Developing with `netlify dev`
 
