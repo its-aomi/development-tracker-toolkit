@@ -1,6 +1,6 @@
 import TableOfContents from './TableOfContents';
 
-# Using the Tips table
+# 10. Using the Tips table
 The public-facing site includes a page with a form that allows users to submit tips and optional photos about any real estate development project in your city. It also includes a version of the tip form at the bottom of every development project page. Any tips submitted using these forms will be pulled into the Tips table. 
 
 
@@ -11,11 +11,14 @@ The public-facing site includes a page with a form that allows users to submit t
 
 Linked to the email field on the site tip forms. 
 
-
-
 * This will pull in automatically when someone submits a tip. It is not a required field, so may be blank.
 * We decided to make contact information optional to make the tip process as easy as possible; you may decide to adjust that page’s code to only allow non-anonymous tips to make it easier to follow up and verify information. 
 
+### Name
+
+Linked to the name field on the site tip forms. 
+
+* This will pull in automatically when someone submits a tip. It is not a required field, so may be blank.
 
 ### Report
 
@@ -40,11 +43,15 @@ Linked to the “Where are you?” field on the site tip forms.
 
 Linked to the “Upload a photo” field on the site tip forms. 
 
-
-
 * This will pull in automatically when someone submits a tip. It is not a required field, so may be blank.
-* People can submit any images that you could copy to new or existing Project table records; you should use your newsroom’s processes for verifying and confirming ownership of photos. 
+* People can submit any images that you could copy to new or existing Project table records if given permission; you should use your newsroom’s processes for verifying and confirming ownership of photos. 
 
+### Publish photo?
+
+Linked to the "What is the photo's source?" selection field on the site tip form.
+
+* This will pull in automatically if selected when someone submits a tip. It is not a required field, so may be blank.
+* Tipsters can select either "I took this photo and you can publish it in the tracker," which will show in this Airtable field as "Yes," or "I found this photo elsewhere or don't want it to be published," which will show in this field as "No."
 
 ### Projects
 
