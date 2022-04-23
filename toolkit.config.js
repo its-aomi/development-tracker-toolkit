@@ -1,5 +1,6 @@
 module.exports = {
   siteTitle: `Local Development Tracker Toolkit`,
+  siteUrl: `https://airtable-tracker-toolkit.netlify.app`,
   organization: `Your Organization`,
   city: `Detroit`,
   state: `Michigan`,

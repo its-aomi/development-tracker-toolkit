@@ -6,7 +6,7 @@ import { useState } from "react";
 import ProjectList from "../components/ProjectList";
 import { getProject } from "../utils/getProject";
 import Head from "next/head";
-import { city, siteTitle } from "../toolkit.config";
+import { city, state, siteTitle } from "../toolkit.config";
 
 export async function getStaticProps(context) {
   const airtable = new Airtable({
@@ -38,16 +38,16 @@ export default function ListPage({ projects }) {
     <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <title>{`Detroit Development Tracker: List of all projects`}</title>
+        <title>{`${siteTitle}: List of all projects`}</title>
         <meta
           name="description"
-          content="Tracking development in Detroit, Michigan."
+          content={`Tracking development in ${city}, ${state}.`}
           key="description"
         />
         <meta property="og:title" content={siteTitle} key="title" />
         <meta
           property="og:description"
-          content="Use the Detroit Development Tracker to look up information about real estate development in the city."
+          content={`Use the ${siteTitle} to look up information about real estate development in the city.`}
         />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>

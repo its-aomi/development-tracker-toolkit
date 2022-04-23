@@ -176,7 +176,7 @@ export default function ProjectMapPage(props) {
         <meta property="og:title" content={siteTitle} key="title" />
         <meta
           property="og:description"
-          content="Use the Detroit Development Tracker to look up information about real estate development in the city."
+          content={`Use the ${siteTitle} to look up information about real estate development in the city.`}
         />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>

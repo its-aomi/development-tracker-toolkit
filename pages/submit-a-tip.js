@@ -45,7 +45,7 @@ export default function SubmitPage() {
     <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <title>{`Detroit Development Tracker: Submit a tip`}</title>
+        <title>{`${siteTitle}: Submit a tip`}</title>
         <meta
           name="description"
           content="Tracking development in Detroit, Michigan."

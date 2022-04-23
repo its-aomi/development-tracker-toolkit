@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
-import { siteTitle } from "../toolkit.config";
+import { city, state, siteTitle } from "../toolkit.config";
 
 const handleClick = (queryString, setResponse) => {
   fetch(`/api/submitFeedback?${new URLSearchParams(queryString).toString()}`)
@@ -26,16 +26,16 @@ export default function ContactPage() {
     <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <title>{`Detroit Development Tracker: Contact us`}</title>
+        <title>{`${siteTitle}: Contact us`}</title>
         <meta
           name="description"
-          content="Tracking development in Detroit, Michigan."
+          content={`"Tracking development in ${city}, ${state}."`}
           key="description"
         />
         <meta property="og:title" content={siteTitle} key="title" />
         <meta
           property="og:description"
-          content="Use the Detroit Development Tracker to look up information about real estate development in the city."
+          content={`Use the ${siteTitle} to look up information about real estate development in the city.`}
         />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>

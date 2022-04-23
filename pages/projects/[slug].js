@@ -8,12 +8,11 @@ import PageSection from "../../components/PageSection";
 import ProjectGallery from '../../components/Project/ProjectGallery';
 import ProjectHeader from '../../components/Project/ProjectHeader';
 import ProjectMap from '../../components/Project/ProjectMap';
-import ProjectParcel from '../../components/Project/ProjectParcel';
 import MarkdownDivider from '../../components/MarkdownDivider';
 import ProjectReport from "../../components/Project/ProjectReport";
 import {getProject} from '../../utils/getProject';
 import {geocodeAddress} from '../../utils/geocodeAddress';
-import { getParcel } from "../../utils/getParcel";
+import { siteTitle, siteUrl } from "../../toolkit.config";
 
 dayjs.extend(relativeTime)
 
@@ -77,9 +76,8 @@ export async function getStaticProps(context) {
   // create another object we can return
   let project = getProject(record);
 
+  // geocode that project's address
   let geometry = await geocodeAddress(project.address);
-
-  // let parcelData = await getParcel(project.parcelId)
 
   let feature = {
     type: "Feature",
@@ -91,24 +89,23 @@ export async function getStaticProps(context) {
     props: {
       proj: project,
       feature: feature,
-      // parcelData: parcelData
     },
   };
 }
 
 const ProjectPage = (props) => {
   let { proj, feature } = props;
-  console.log(feature)
+
   return (
     <>
 
       <Head>
-        <title>{`Detroit Development Tracker: ${proj.name}`}</title>
-        <meta property="og:url" content={`https://developmenttracker.detourdetroit.com/projects/${proj.slug}`} />
+        <title>{`${siteTitle}: ${proj.name}`}</title>
+        <meta property="og:url" content={`${siteUrl}/projects/${proj.slug}`} />
         <meta property="og:type" content={`website`} />
-        <meta property="og:title" content={`Detroit Development Tracker: ${proj.name}`} />
+        <meta property="og:title" content={`${siteTitle}: ${proj.name}`} />
         <meta property="og:description" content={
-          `This ${proj.uses ? proj.uses.map(u => u.toLowerCase()).join(", ") : ''} project's status is "${proj.status ? proj.status.toLowerCase() : `?`}". Learn more about ${proj.name} in the Detroit Development Tracker.`
+          `This ${proj.uses ? proj.uses.map(u => u.toLowerCase()).join(", ") : ''} project's status is "${proj.status ? proj.status.toLowerCase() : `?`}". Learn more about ${proj.name} in the ${siteTitle}.`
         } />
         {proj.images && proj.images.length > 0 && <meta property="og:image" content={proj.images[0].thumbnails.large.url} />}
       </Head>
@@ -120,7 +117,6 @@ const ProjectPage = (props) => {
             {proj.synopsis}
           </ReactMarkdown>
         </PageSection>
-        {/* <ProjectParcel parcelId={proj.parcelData} parcelData={props.parcelData} /> */}
         <ProjectMap id={proj.id} feature={feature} project={proj} />
         {proj.images && proj.images.length > 0 && <ProjectGallery images={proj.images} caption={proj.imageCaption} />}
       </div>
