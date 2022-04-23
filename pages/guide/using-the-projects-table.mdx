@@ -1,11 +1,27 @@
 import TableOfContents from './TableOfContents';
 
 # 8. Using the Projects table
-The Projects table is the first and main table you’ll be using, shown by default in grid view. It is where you add information about real estate developments. You can use different views or interfaces to add this information. Below, we walk through all the data you’ll enter for each record and how it can or should be formatted, going in sequence through the fields as they are displayed in the grid view.
+The Projects table is the first and main table you’ll be using, shown by default in grid view. It is where you add information about real estate developments. You can use different views or interfaces to add this information.
 
 
 ## Fields
+Here is a list of all the fields that are used in the projects table. Below, in sequence through the fields as they are displayed in the Airtable grid view, find details on formatting and how each field is used as part of your data structure, creating the live site and managing data entry workflows. 
 
+* Name
+* Slug
+* Address
+* Synopsis
+* Build type
+* Status
+* Uses
+* Images
+* Image caption
+* Assigned to 
+* Record status
+* Notes
+* Tips
+* Record created
+* Last modified
 
 ### Name 
 
@@ -52,7 +68,7 @@ A description of the real estate development that you will research/report and w
 
 
 
-* Example: "City Growth Partners and DEP Designs partnered on the Brush 8 Townhouses development and [broke ground](https://urbanize.city/detroit/post/construction-starts-brush-8-townhomes-brush-park) in March 2021. The eight townhouses, which started at $650,000, are fully sold and[ will feature](https://detroit.curbed.com/2018/7/26/17615502/brush-park-residential-developments-revealed) a ground level garage with a rooftop terrace. In 2022, the project was approved for $230,000 in state and local[ brownfield tax incentives](https://urbanize.city/detroit/post/3-detroit-developments-approved-state-funding-support). Sources: Urbanize Detroit, Curbed Detroit"
+* Example: "City Growth Partners and DEP Designs partnered on the Brush 8 Townhomes development and [broke ground](https://urbanize.city/detroit/post/construction-starts-brush-8-townhomes-brush-park) in March 2021. The eight townhouses, which started at $650,000, are fully sold and[ will feature](https://detroit.curbed.com/2018/7/26/17615502/brush-park-residential-developments-revealed) a ground level garage with a rooftop terrace. In 2022, the project was approved for $230,000 in state and local[ brownfield tax incentives](https://urbanize.city/detroit/post/3-detroit-developments-approved-state-funding-support). Sources: Urbanize Detroit, Curbed Detroit"
 * This is a long-text field that allows rich text formatting, and will display as a summary on the public-facing page. Do not use bullet points. 
 * You can adapt this field’s use to fit your project’s data, your team’s capacity and your outlet’s standards and style. 
     * We include two to six sentences curating information from other outlets (with links and credits), as well as research and original reporting, and aim to include the name of the developer; more details about the project’s status and timeline; projected cost; funding sources; needed city approvals; and the site’s history in some cases. 
@@ -115,7 +131,7 @@ Caption and credit information for your uploaded images.
 * This is a long-text field that allows rich text formatting, and will display captions sequentially on the public-facing page with the corresponding images. Do not use bullet points. 
 * It must be left empty if there are no images for the record, and must be filled out if there are. 
 * If there is more than one image for a record, enter each caption on its own line, without a paragraph break. Use the same ordering as the images appear in the image field (you can click and drag to rearrange). 
-* Use whatever styling and credit policies make sense for your site to create a standard format. Ours is: “[a sentence describing the image]. Credit: [source, with link]”
+* Use whatever styling and credit policies make sense for your site to create a standard format. Ours is: “[a sentence describing the image]. Credit: [source, with optional link]”
 
 
 ### Assigned to
@@ -131,7 +147,7 @@ A field where you can select one or multiple base collaborators, used internally
 
 ### Record status
 
-A single-select field used internally to track whether records are assigned, ready for review, to hold or published. 
+A single-select field used internally to track whether records are assigned, ready for review, to hold, ready to publish or published. 
 
 
 
