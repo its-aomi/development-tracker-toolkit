@@ -19,9 +19,12 @@ The easiest way to get your site up and running is with a hosting provider, such
 
 <Image src={netlifyRepoBuildSettings} width={575} height={500} />
 
-6. Under advanced build settings, add your environment variables, from your `.env.development.local` file.
+6. Under advanced build settings, add your environment variables, from your `.env.development.local` file. 
 
-<Image src={netlifyRepoEnvVar} width={600} height={300} />
+
+Note: The `RECORD_FILTER` will be wrapped in double quotes in your `.env.development.local` file, but you should remove those for the Netlify environment variable. Also, be sure that the quotation marks in the `RECORD_FILTER` are straight quotes, and not curly quotes.
+
+<Image src={netlifyRepoEnvVar} width={600} height={600} />
 
 7. Finally, click 'Deploy site'.
 8. Netlify will build your site, and deploy it! This process takes a few minutes.
