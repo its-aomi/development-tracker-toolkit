@@ -33,7 +33,7 @@ const ProjectReport = ({ id }) => {
     Email: "",
     Projects: id,
     Name: "",
-    "Publish Photo": null,
+    "Publish photo?": null,
   });
 
   const [response, setResponse] = useState(null);
@@ -85,8 +85,8 @@ const ProjectReport = ({ id }) => {
               <input
                 type="radio"
                 id="yespublish"
-                checked={record["Publish Photo"] === 'Yes'}
-                onClick={(e) => setRecord({ ...record, "Publish Photo": 'Yes' })}
+                checked={record["Publish photo?"] === 'Yes'}
+                onClick={(e) => setRecord({ ...record, "Publish photo?": 'Yes' })}
                 className="inline"
               />
               <label htmlFor="yespublish" className="inline ml-3 nostyle">
@@ -98,8 +98,8 @@ const ProjectReport = ({ id }) => {
                 type="radio"
                 id="nopublish"
                 className="inline"
-                checked={record["Publish Photo"] === 'No'}
-                onClick={(e) => setRecord({ ...record, "Publish Photo": 'No' })}
+                checked={record["Publish photo?"] === 'No'}
+                onClick={(e) => setRecord({ ...record, "Publish photo?": 'No' })}
               />
               <label htmlFor="nopublish" className="inline ml-3 nostyle">
                 I found this photo elsewhere or don&apos;t want it to be

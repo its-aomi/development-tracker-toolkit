@@ -36,6 +36,7 @@ export default function SubmitPage() {
     Address: address,
     Report: report,
     Email: email,
+    Name: name
   };
 
   if (publishPhoto === true) {
