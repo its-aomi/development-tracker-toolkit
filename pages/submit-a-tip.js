@@ -70,8 +70,7 @@ export default function SubmitPage() {
       <div className="max-w-xl mx-auto submit-form">
         <h2>Let us know what you&apos;re seeing.</h2>
         <p className="pb-5 md:pb-11 leading-6">
-          Do you see a project in your neighborhood or development activity?
-          We&apos;ll check it out and get back to you.
+          Do you know about a real estate project or see development activity near you? Tell us what you see or want to know. Reader tips help us keep the development tracker updated and accurate. We look at every tip, verify its information and add appropriate details to existing or new project pages in the tracker. Include your email if you want us to follow up with you. Thank you for contributing to the development tracker!
         </p>
         <div>
           <label htmlFor="textarea">Where are you?</label>
