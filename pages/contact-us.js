@@ -44,30 +44,13 @@ export default function ContactPage() {
         <h2 className="pb-6">Contact us</h2>
 
         <p>
-          Do you have questions about site design, data or development? Email{" "}
-          <Link href="mailto:james.mcbroom@gmail.com">
-            james.mcbroom@gmail.com
-          </Link>{" "}
-          or open an issue on the{" "}
-          <Link href="https://github.com/jmcbroom/development-tracker">
-            GitHub repository
-          </Link>
-          .
+          Use this form to get in touch with the creators of this site if you have questions or are interested in partnering.
         </p>
 
         <p>
-          Do you have questions about collaboration, using the tracker or
-          building a data tool for your own news site? Email{" "}
-          <Link href="mailto:kate@detourdetroiter.com">
-            kate@detourdetroiter.com
-          </Link>
-          .
-        </p>
-
-        <p>
-          Do you want to share information about a development not currently
-          included in the tracker?{" "}
-          <Link href="/submit-a-tip">Submit a tip</Link>.
+          If you want to share information about a development not currently
+          included in the tracker,{" "}
+          <Link href="/submit-a-tip">submit a tip</Link>.
         </p>
 
         <div>
