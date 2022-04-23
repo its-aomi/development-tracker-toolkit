@@ -80,5 +80,13 @@ This is the site's About page. You can edit text within sections we've included,
 
 These are [JavaScript files](https://docs.fileformat.com/web/js/) (also found under pages in your GitHub repository) for the Submit a Tip and Contact Us forms on the tracker site. You can edit these files to adjust the introductory text on those two pages, but be careful not to edit any other code or make other adjustments to those files unless you are familiar with JavaScript. 
 
+## Delete the guide content
+
+You'll want to remove the guide content, which you're reading now, so it's not published along with your site: 
+
+- Delete the `guide` directory that's inside `pages`.
+- In `components/Header.js`, remove lines 24 through 27 (inclusive) to remove the reference to the guide.
+
 *Now that you have your site ready, the next section will show you how to publish your site to the web, connect it to your outlet's domain and regularly republish it to capture updates to your data in Airtable.* 
+
 <TableOfContents index={11} />
