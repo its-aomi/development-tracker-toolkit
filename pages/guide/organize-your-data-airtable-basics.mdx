@@ -1,6 +1,6 @@
 import TableOfContents from "./TableOfContents";
 
-# 6. Organize your data: Airtable basics
+# 6. Organizing your data: Airtable basics
 
 Airtable is a low-code, “spreadsheet-database hybrid” platform with a freemium model. It can be used for standalone datasets or to collect information, like a spreadsheet, but also has more robust features like a database that allow you to link your different spreadsheets (called tables) and records contained in them to each other. 
 
@@ -9,9 +9,9 @@ It has many different uses, but you see it [used most often in journalism](https
 
 ## How the development tracker uses Airtable
 
-The development tracker includes two of those uses, collecting data internally and collecting reader-sourced tips through externally published forms. But we use Airtable in a third, more foundational way – as the content management system that powers the public-facing development tracker site, or news app. If you work in journalism, you almost certainly use a content management system to post to your outlet’s site – Wordpress is a common one, and there are [plenty others](https://www.poynter.org/business-work/2020/we-researched-five-cmss-to-kickstart-your-cms-transition/) like Arc Publishing, Ghost and custom-built CMSes. 
+The development tracker includes two of those uses, collecting data internally and collecting reader-sourced tips through externally published forms. But we use Airtable in a third, more foundational way – as the content management system that powers the public-facing development tracker site, or news app. If you work in journalism, you almost certainly use a content management system to post to your outlet’s site – Wordpress is a common one, and there are [plenty of others](https://www.poynter.org/business-work/2020/we-researched-five-cmss-to-kickstart-your-cms-transition/) like Arc Publishing, Ghost and custom-built CMSes. 
 
-In the development tracker, you don’t draft and publish posts as you would in a classic publishing CMS.  Airtable records, or rows of data, about real estate developments are instead each essentially a separate page on the site. The way the template site is coded allows those pages to be created, as well as main category pages that are coded separately. See [the publishing your site section](./guide/publishing-the-site#republishing-the-site) for more on how you go about “publishing” your Airtable records to the site. 
+In the development tracker, you don’t draft and publish posts as you would in a classic publishing CMS.  Airtable records, or rows of data, about real estate developments are instead each essentially a separate page on the site. The way the template site is coded allows those pages to be created, as well as main category pages that are coded separately. See [the publishing your site section](./publishing-the-site#republishing-the-site) for more on how you go about “publishing” your Airtable records to the site. 
 
 We chose to use Airtable this way because when we started this project, we were familiar with Airtable; it is really strong for capturing and entering the large quantities of data we wanted to compile, with a low barrier to entry for a first-timer; and it was relatively simple, if you’re a developer, to structure for and connect to a public site. With the template site, we’ve also made it easier for someone with less coding experience to take on the latter piece. 
 
@@ -47,7 +47,7 @@ Each table in your base is made up of rows, called records. Each record correspo
 
 ### Field
 
-Each record has multiple columns, or fields, where you store individual pieces of data for the record. You use fields to structure your records; you can use them externally, like an address that appears on a development's page on the tracker, or internally, like who is assigned to a record. 
+Each record has multiple columns, or fields, where you store individual pieces of data for the record. You use fields to structure your records; you can use them externally, like an address that appears on a development's page on the tracker, or internally, like to track which staffer is assigned to complete or edit a record. 
 
 
 ### Field types
@@ -81,7 +81,7 @@ The development tracker template includes several interfaces that work well for 
 
 ### Collaborators
 
-You can add collaborators with different levels of access. You can share an entire workspace with members of your organization or a whole base, with “creators” having permission to make any changes to the base and “editors” able to edit records and views but not reconfigure tables or fields. 
+You can add collaborators with different levels of access. You can share an entire workspace or base with members of your organization. “Creators” have permission to make any changes to a base and “editors” are able to edit records and views but not reconfigure tables or fields. 
 
 You can also share a base as read only or comment only, and share particular views for editing or read only.
 
@@ -90,7 +90,7 @@ Once you have collaborators in your base, you can mention them in comments or us
 
 ### Automations
 
-Airtable automations allow you to easily set up certain automated actions in other platforms, with a trigger you determine, like when a record is added or matches certain conditions. It works with apps including Slack, Twitter, Google Suite and others. 
+Airtable automations allow you to easily set up certain automated actions in other platforms, with a trigger you determine, like when a record is added or matches certain conditions. It works with a range of apps, including Slack, Twitter, Google Suite and others. 
 
 In the Detroit Development Tracker, we use automations to send messages to a channel in our organization’s Slack whenever a new tip is submitted or a record is marked ready for review. Automations must be set up with your own accounts on other platforms; read more about how to add an automation [here](https://support.airtable.com/hc/en-us/articles/360050974153-Automations-overview).  
 
