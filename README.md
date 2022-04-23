@@ -65,7 +65,6 @@ This file sits at the root of your site, and should be used to customize the sit
 - `NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN`: The Mapbox access token for your project. You can find this on your Mapbox [account page](https://www.mapbox.com/account/).
 - `NEXT_PUBLIC_SUPABASE_URL`: The URL of your Supabase instance.
 - `NEXT_PUBLIC_SUPABASE_API_KEY`: The API key for your Supabase instance. You can find this on your Supabase [account page](https://supabase.com/account).
-- `PRODUCTION_URL`: The URL of the production site.
 
 ## Additional functionality
 
