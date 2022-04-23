@@ -4,70 +4,78 @@ import new_supabase_bucket_policy from "./images/setting-up-the-site/new-supabas
 
 # Setting up the site
 
-## Create your own copy of this site
+You will need several online accounts and programs installed on your computer to set up the site. 
 
-- Fork this repository, using the "Fork" button at the top right of this page.
-- You may want to [rename your repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/renaming-a-repository) to something more meaningful.
-- From a terminal, clone your newly-forked repository to your local computer, using your Git username and repository name instead of the placeholders here:
 
-```
-git clone git@github.com:<my-github-username>/<my-repository-name>.git
-```
 
-- This should create a new folder, `<my-repository-name>`, in the current directory.
-- Change into that folder, which is the root directory of your new site:
+* Sign up for a [GitHub account](https://github.com/join). Read [GitHub’s FAQs](https://docs.github.com/en/get-started) for an introduction to using GitHub. 
+* Install Git on your computer. See instructions [here](https://github.com/git-guides/install-git). (You may need other software installed for Git to function – on a Mac, you will need [Xcode](https://developer.apple.com/xcode/).) 
+* Install Node.js and npm. See instructions [here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+* [Install Visual Studio Code](https://code.visualstudio.com/download) (or use your preferred source-code editor, such as Atom or Sublime Text). 
+    * The rest of the instructions assume you are using VS Code, though can be adapted to another editor if you have coding experience. 
+    * If you have not used a terminal before, see a background [explainer here](https://itconnect.uw.edu/learn/workshops/online-tutorials/web-publishing/what-is-a-terminal/). 
+    * VSCode’s [guide to using the program with GitHub](https://code.visualstudio.com/docs/editor/github) may also be helpful. 
+* Within VSCode, install the GitHub Pull Requests and Issues extension [here](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github).
+* Sign in [to VSCode with GitHub](https://code.visualstudio.com/docs/editor/github) to connect your accounts. 
+* Sign up for a Mapbox account [here](https://account.mapbox.com/auth/signup/).
+* Sign up for a [Supabase account](https://app.supabase.io/), logging in with your GitHub profile.
 
-```
-cd <my-repository-name>
-```
+## Create your own copy of this site and host it on your computer
+
+* While signed in to GitHub, fork the template tracker’s repository, using the "Fork" button at the [top right of this page](https://github.com/jmcbroom/airtable-tracker-toolkit).
+* You should [rename your repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/renaming-a-repository) to something more meaningful, like “[your city name]-development-tracker.”
+* From VSCode on your computer, clone your newly-forked repository to your local computer:
+    * Open the Command Palette by entering  Ctrl + Shift + P.
+    * Type `gitcl`, then select `Git: Clone`. 
+    * Select your newly forked repository and select a folder on your computer to save it to.  
 
 Before you can begin development, you'll have to make changes to two files that sit at the root of your site.
 
 ## Configuring `.env.development.local`
 
-`.env.development.local` contains environment variables used in your application. These are principally API tokens that are used to connect to Airtable, Mapbox, and Supabase.
-
-This file will **not** be committed to GitHub, since it contains sensitive information -- That's why it's included in the `.gitignore` file.
-
+The file `.env.development.example` contains environment variables used in your application. These are principally API tokens that are used to connect to Airtable, Mapbox and Supabase.
+This file will **not** be committed to GitHub, since it contains sensitive information -- that's why it's included in the `.gitignore` file.
 You will eventually want these environment variables to live in Netlify; more on that later!
+ 
+First, you need to [rename the file](https://vscode-docs.readthedocs.io/en/stable/editor/codebasics/) to `.env.development.local` from VSCode’s explorer. 
 
 ### Airtable configuration
 
 You should already have an Airtable account; the next step is to get your personal API key and the ID of your Base.
 
-1. Find your API key on your [Airtable account page](https://airtable.com/account). You will have to click the purple input box to reveal the API key.
-2. Copy this value as the `AIRTABLE_API_KEY`.
-3. Find the ID of your base: from the [Airtable API documentation](https://airtable.com/api), select your base; the base ID, which starts with `app` is the value you need.
-4. Copy this value as the `AIRTABLE_BASE_ID`.
+* Find your API key on your [Airtable account page](https://airtable.com/account). You will have to click the purple input box to reveal the API key.
+* Copy this value as the `AIRTABLE_API_KEY` (after the `=` sign) in `.env.development.local`.
+* Find the ID of your base: From the [Airtable API documentation](https://airtable.com/api), select your base; the base ID, which starts with `app`, is the value you need.
+* Copy this value as the `AIRTABLE_BASE_ID` in `.env.development.local`.
 
 ### Mapbox configuration
 
-[Mapbox]() is used for the map on the site, as well as to geocode the [addresses](./setting-up-and-using-your-base#project-field-address) attached to each project.
+Mapbox is used for the map on the site, as well as to geocode the [addresses](./setting-up-and-using-your-base#project-field-address) attached to each project.
 
-1. Sign up for an account [here](https://account.mapbox.com/auth/signup/)
-2. On the main [account page](https://account.mapbox.com/), click 'Create a token' to create a new access token.
-3. Copy that access token as the `NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN`.
+* On the main [account page](https://account.mapbox.com/), click "Create a token" to create a new access token.
+* Copy that access token as the `NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN` in `.env.development.local`.
 
 ### Supabase configuration
 
 #### Configuring Supabase bucket
 
-1. Create a Supabase account, using your GitHub profile.
-2. Create a new project, named `development-tracker.`
-3. Create a new storage bucket, named `report-photos`. Make sure that the "public bucket" option is checked.
-4. Go to "Policies", under "Configuration", and create a "New policy" on the `report-photos` bucket.
-5. Choose "Create a policy from scratch".
-
-Create a new policy that looks like this: `SELECT` and `INSERT` should be checked.
+* Create a new project, named `development-tracker.` (It may take a few minutes to set up before you can proceed.)
+* Create a new storage bucket, named `report-photos`. Make sure that the "public bucket" option is checked.
+* Go to "Policies", under "Configuration", and create a "New policy" on the `report-photos` bucket.
+* Choose "Create a policy from scratch".
+  * Create a new policy. `SELECT` and `INSERT` should be checked.
+  * For policy name, enter: `“Reviewing policies to be created for report-photos"`
+  * For policy definition, enter: `(bucket_id = 'report-photos'::text)`
 
 <Image src={new_supabase_bucket_policy} />
 
 #### Supabase environment variables
 
-6. Navigate to your Supabase project settings, which is the gear icon on the bottom of the left-hand sidebar.
-7. Click "API" under "Project Settings".
-8. Copy, the `anon` `public` API key, starting with `ey`, as the `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
-9. Copy the URL of the Supabase project, including the `.supabase.co` suffix, under "Configuration", as the `NEXT_PUBLIC_SUPABASE_URL`:
+* Navigate to your Supabase project settings, which is the gear icon on the bottom of the left-hand sidebar.
+* Click "API" under "Project Settings."
+* Copy, the `anon` `public` API key, starting with `ey`, as the `NEXT_PUBLIC_SUPABASE_ANON_KEY` in the `.env.development.local` file in VSCode.
+* Copy the URL of the Supabase project, including the `.supabase.co` suffix, under "Configuration", as the `NEXT_PUBLIC_SUPABASE_URL` in `.env.development.local`.
+
 
 Congrats! You've configured all the underlying services - you're ready to run the development server.
 
@@ -75,7 +83,8 @@ Congrats! You've configured all the underlying services - you're ready to run th
 
 Now that you're done configuring the site, it's time to run a development server locally so you can make changes to the site and test those changes on your local machine, before pushing those changes to your GitHub repository.
 
-Make sure your project is open in run the following command: `npm run dev`.
+Within VSCode, while you are working within the root directory of your site, open the terminal (Menu > View > Terminal). Then run the command `run npm install`. (You “run” by entering that text and then hitting enter.) Installation may take a few minutes. 
+Then, run the following command: `npm run dev`.
 
 You should see a message in the terminal:
 
@@ -83,7 +92,7 @@ You should see a message in the terminal:
 ready - started server on 0.0.0.0:3000, url: http://localhost:3000
 ```
 
-Go to your browser and navigate to `http://localhost:3000` -- you should see a live copy of the site!
+Go to your browser and navigate to `http://localhost:3000` -- you should see a live copy of the template site!
 
 *In the next section, you'll learn how to customize necessary elements of the site.* 
 
