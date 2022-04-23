@@ -2,12 +2,15 @@ import TableOfContents from "./TableOfContents";
 
 # Customizing the site
 
+Follow these steps to customize your version of the tracker to pull in the correct geography, as well as your publication's name and your site name in areas across the site. Here, you can also edit the copy that appears on main pages of the site (the homepage, tips page, about page and contact page).
+
 ## Configuring `toolkit.config.js`
 
-- This contains basic sitewide configuration data
+- This file in your site can be found under the root directory in VSCode. It contains basic sitewide configuration data.
 - The defaults are set up for the Detroit area, but you will need to change them.
+- Navigate to the `toolkit.config.js` file in VSCode and replace the template variables with your own, shown below.
 
-It looks like this:
+The file looks like this:
 
 ```
 module.exports = {
@@ -25,7 +28,8 @@ module.exports = {
 
 ### `siteTitle`
 
-This is your site's title: it's displayed in the header, as well as in URL preview links.
+- This is your site's title: It's displayed in the header, as well as in URL preview links. 
+- Change `Local Development Tracker Toolkit` to the name you will use for your tracker, like `Detroit Development Tracker`.
 
 ### `siteUrl`
 
@@ -43,25 +47,26 @@ These two values are the city and state you're working in. These are displayed a
 
 This is a bit of a special variable. It's a list of four numbers, representing the geographical extent of your site. It controls two things:
 
-- The initial view of the map
-- Where the geocoder will attempt to locate your [project addresses](./setting-up-and-using-your-base#project-field-address)
+- The initial view of the map.
+- Where the geocoder will attempt to locate your [project addresses](./setting-up-and-using-your-base#project-field-address).
 
-You can create a bounding box using this site: [https://boundingbox.klokantech.com/](https://boundingbox.klokantech.com/)
+You can create a bounding box using this site: [https://boundingbox.klokantech.com/](https://boundingbox.klokantech.com/).
 
-- Search for your location
-- Adjust the rectangle to create the bounding box
-- Change the output format at lower left to "CSV RAW"
-- Copy-and-paste those four numbers between the square brackets in the file
+- Search for your location.
+- Adjust the rectangle to create the bounding box.
+- Change the output format at lower left to "CSV RAW."
+- Copy-and-paste those four numbers between the square brackets in the file.
 
-### `primary`, `secondary`, and `tertiary`
+### `primary`, `secondary` and `tertiary`
+These are hex codes for the main colors used on the site, for the navigation bar and other elements. You can [select other colors](https://g.co/kgs/KYhfPC) and copy their hex codes in this spot.
 
 ## Customizing the site content
 
-Inside the `pages` directory in your site, there are a couple key files you can customize.
+Inside the `pages` directory in your site, there are a couple key files you can customize. You can make edits to these pages in VSCode, but it will be easier to edit them from GitHub. In your GitHub repository, navigate to "pages," then click on the page you want to edit and click the pencil icon at the top right of the file to make changes. When you are done editing, commit your changes by clicking the button at the bottom of the page. 
 
-These files are [MDX]() files, meaning that they're principally written in Markdown and then can contain JSX components.
+These files are [MDX](https://fileinfo.com/extension/markdown) files, meaning that they're principally written in Markdown and then can contain JSX components.
 
-Here's a [cheat sheet for Markdown](https://www.markdownguide.org/basic-syntax/).
+You will need to write in Markdown for formatting and links to render properly. Here's a [cheat sheet for Markdown](https://www.markdownguide.org/basic-syntax/). You can also install the [Docs to Markdown plugin](https://workspace.google.com/marketplace/app/docs_to_markdown/700168918607) to convert text within Google Doc files or use an online [converter](https://euangoddard.github.io/clipboard2markdown/).
 
 ### `index.mdx`
 
@@ -69,7 +74,9 @@ This is your site's homepage.
 
 ### `about.mdx`
 
-This is the site's About page. You can edit text within sections we've included, like your audience can use the site and who can collaborate on this project. **Please keep the final section, "[Credits](./about#credits)," on your site** -- it includes creator credits and a link back to this toolkit. 
+This is the site's About page. You can edit text within sections we've included, like your audience can use the site and who can collaborate on this project. **Please keep the final section, "[Credits](./about#credits)," on your site** -- it includes creator credits and a link back to this toolkit.
+
+### `TKTK`
 
 *Now that you have your site ready, the next section will show you how to publish your site to the web, connect it to your outlet's domain and regularly republish it to capture updates to your data in Airtable.* 
 <TableOfContents index={11} />
