@@ -1,11 +1,27 @@
 import TableOfContents from './TableOfContents';
 
 # 8. Using the Projects table
-The Projects table is the first and main table you’ll be using, shown by default in grid view. It is where you add information about real estate developments. You can use different views or interfaces to add this information. Below, we walk through all the data you’ll enter for each record and how it can or should be formatted, going in sequence through the fields as they are displayed in the grid view.
+The Projects table is the first and main table you’ll be using, shown by default in grid view. It is where you add information about real estate developments. You can use different views or interfaces to add this information.
 
 
 ## Fields
+Here is a list of all the fields that are used in the Projects table. Below, moving in sequence through the fields as they are displayed in the Airtable grid view, find details on formatting and how each field is used as part of your data structure, creating the live site and managing data entry workflows. 
 
+* Name
+* Slug
+* Address
+* Synopsis
+* Build type
+* Status
+* Uses
+* Images
+* Image caption
+* Assigned to 
+* Record status
+* Notes
+* Tips
+* Record created
+* Last modified
 
 ### Name 
 
@@ -42,7 +58,7 @@ The street address of the real estate development. It will display as text on th
 
 
 * Example: "3119 Brush Street"
-* The address should be a street address; the geocoding process will only select results within [your site's bounding box](./guide/customizing-the-site#boundingbox), which you will determine when you set up your site. If you have two or more cities within the site's bounding box, you may need to add the city or zipcode to the address field to get the correct result.
+* The address should be a street address; the geocoding process will only select results within [your site's bounding box](./customizing-the-site#boundingbox), which you will determine when you set up your site. If you have two or more cities within the site's bounding box, you may need to add the city or zipcode to the address field to get the correct result.
 * It's not recommended to publish a record without an address, as the project won't display on the map or have a map on the record page. 
 
 
@@ -52,11 +68,11 @@ A description of the real estate development that you will research/report and w
 
 
 
-* Example: "City Growth Partners and DEP Designs partnered on the Brush 8 Townhouses development and [broke ground](https://urbanize.city/detroit/post/construction-starts-brush-8-townhomes-brush-park) in March 2021. The eight townhouses, which started at $650,000, are fully sold and[ will feature](https://detroit.curbed.com/2018/7/26/17615502/brush-park-residential-developments-revealed) a ground level garage with a rooftop terrace. In 2022, the project was approved for $230,000 in state and local[ brownfield tax incentives](https://urbanize.city/detroit/post/3-detroit-developments-approved-state-funding-support). Sources: Urbanize Detroit, Curbed Detroit"
+* Example: "City Growth Partners and DEP Designs partnered on the Brush 8 Townhomes development and [broke ground](https://urbanize.city/detroit/post/construction-starts-brush-8-townhomes-brush-park) in March 2021. The eight townhouses, which started at $650,000, are fully sold and[ will feature](https://detroit.curbed.com/2018/7/26/17615502/brush-park-residential-developments-revealed) a ground level garage with a rooftop terrace. In 2022, the project was approved for $230,000 in state and local[ brownfield tax incentives](https://urbanize.city/detroit/post/3-detroit-developments-approved-state-funding-support). Sources: Urbanize Detroit, Curbed Detroit"
 * This is a long-text field that allows rich text formatting, and will display as a summary on the public-facing page. Do not use bullet points. 
 * You can adapt this field’s use to fit your project’s data, your team’s capacity and your outlet’s standards and style. 
-    * We include two to six sentences curating information from other outlets (with links and credits), as well as research and original reporting, and aim to include the name of the developer; more details about the project’s status and timeline; projected cost; funding sources; needed city approvals; and the site’s history in some cases. 
-    * You could only include summaries of or links to your own reporting; you might only link to outside sources or public documents you report; or you could potentially leave this field blank. We’d recommend that you pick a structure that will make sense for all records rather than changing how use this field depending on the record.  
+    * We include two to six sentences curating information from other outlets (with links and credits), as well as research and original reporting. We aim to include the name of the developer; more details about the project’s status and timeline; projected cost; funding sources; needed city approvals; and the site’s history in some cases. 
+    * You could include only summaries of or links to your own reporting; you might instead only link to outside sources or public documents you collect; or you could potentially leave this field blank. We’d recommend that you pick a structure that will make sense for all records rather than changing how you use this field depending on the record.  
 
 
 ### Build type
@@ -77,7 +93,7 @@ Where the development is in its process, from speculative to complete.
 
 
 * This is a single-select field, and the selection will appear on the public-facing page. 
-* It can be left empty if unknown (though we use the unclear option if so).  
+* It can be left empty if unknown (though we use the option "Unclear" if so).  
 * The template includes seven statuses: speculative, proposed, under construction, complete, stalled, unclear and for sale. You can create internal definitions for these categories or add/edit/delete options based on your data (for example, you might match statues to city processes, like pulled permits). 
 
 
@@ -87,7 +103,7 @@ The intended use of the development, like residential or commercial.
 
 
 
-* This is a multiple select field, and the selections will appear on the public-facing page.
+* This is a multi-select field, and the selections will appear on the public-facing page.
 * It can be left empty if unknown.  
 * The template includes 17 options, based on uses we identified in new and ongoing developments in Detroit. You can adjust the available options based on your local developments, and choose to go more granular or broader.   
 
@@ -115,7 +131,7 @@ Caption and credit information for your uploaded images.
 * This is a long-text field that allows rich text formatting, and will display captions sequentially on the public-facing page with the corresponding images. Do not use bullet points. 
 * It must be left empty if there are no images for the record, and must be filled out if there are. 
 * If there is more than one image for a record, enter each caption on its own line, without a paragraph break. Use the same ordering as the images appear in the image field (you can click and drag to rearrange). 
-* Use whatever styling and credit policies make sense for your site to create a standard format. Ours is: “[a sentence describing the image]. Credit: [source, with link]”
+* Use whatever styling and credit policies make sense for your site to create a standard format. Ours is: “[a sentence describing the image]. Credit: [source, with optional link]”
 
 
 ### Assigned to
@@ -125,18 +141,18 @@ A field where you can select one or multiple base collaborators, used internally
 
 
 * You can leave this field blank or not use it at all. 
-* This field is particularly useful for looking at workload across different collaborators, ensuring people don’t unknowingly work on the same record and for filtering so someone can view only their own assigned projects. 
-* It is currently configured to send an Airtable notification and email when a person is added as a collaborator in the record. (This can be switched off in the customize field type settings, as can the ability to add multiple collaborators). 
+* This field is particularly useful for looking at workload across different collaborators, for ensuring people don’t unknowingly work on the same record and for filtering so someone can view only their own assigned projects. 
+* It is currently configured to send an Airtable notification and email when a person is added as a collaborator in the record. (This can be switched off in the "customize field type" settings, as can the ability to add multiple collaborators.) 
 
 
 ### Record status
 
-A single-select field used internally to track whether records are assigned, ready for review, to hold or published. 
+A single-select field used internally to track whether records are assigned, ready for review, on hold, ready to publish or published. 
 
 
 
 * You will need to use the last option – selecting "Published" is how you queue a record to go live as a page on the public-facing site the next time it is rebuilt. 
-* You don’t have to use the other options, but in conjunction with the assigning field and automations, they are useful for production and handoffs – i.e., setting up an automated Slack message whenever a record is marked ready for review. It’s also an easy way to filter all projects that aren’t yet completed or need an editor. We use the "Hold" option for records that are incomplete for various reasons, like requiring additional reporting. 
+* You don’t have to use the other options, but in conjunction with the Assigned to field and automations, they are useful for production and handoffs – i.e., setting up an automated Slack message whenever a record is marked ready for review. It’s also an easy way to filter all projects that aren’t yet completed or need an editor. We use the "Hold" option for records that are incomplete for various reasons, like requiring additional reporting. 
 * It is okay to add additional selection options if you have a different workflow – but do not change or delete the Published option. 
 * If you need to unpublish a record from the live site, change the record status to "Assigned" or another option. It will be taken offline the next time you rebuild the site.
 * If you have a published record that you would like to update, don’t switch it back to assigned or ready to review. You can comment on the record and/or tag a collaborator.
@@ -182,12 +198,12 @@ This field shows the time a record was last modified and is automatically genera
 
 ## Views
 
-Your Projects table includes several pre-configured views that may help you with managing your data. You can delete any views that you don’t end up using, edit these ones or add new ones. See more about [using and editing views here](https://support.airtable.com/hc/en-us/articles/360042311914-What-is-a-view-). 
+Your Projects table includes several pre-configured views that may help you with managing your data. You can delete any views that you don’t end up using, edit them or add new ones. See more about [using and editing views here](https://support.airtable.com/hc/en-us/articles/360042311914-What-is-a-view-). 
 
 
 
 * **Grid view:** Main view, shows all fields.
-* **Researcher view:** A view that shows fields someone entering data should edit. Filter to a particular collaborator in the "Assigned to" field for individual use.
+* **Researcher view:** A view that shows fields someone entering data should edit. Filter to a particular collaborator in the Assigned to field for individual use.
 * **Error: No address:** These records are missing addresses. 
 * **Error: Image, no caption:** These records are missing image captions.
 * **Error: Slug issue:** Add a slug or remove spaces in these records.
@@ -205,8 +221,8 @@ Your Projects table includes several pre-configured interfaces that may help you
 * **Researcher view – All records assigned to me:** An easier data entry format than the grid view that shows one record at a time. It will only show records that are assigned to the person who is signed in and using the interface.  
 * **Researcher view – Only incomplete records:** Same as the other researcher view, but only shows assigned records that aren’t marked as ready for review or published. 
 * **Editor view – Projects records ready for review:** A view for an editor to fact check and edit records that have been marked as ready for review, then change record status to published. 
-* **Dashboard – Record stats:** Shows record and data entry status with stats for your base, like the total number of records, and charts, like the number of records assigned to each collaborator. 
-* **Dashboard – Project stats:** Shows an overview of your data, including the breakdown of real estate development project by use type (like commercial or residential) and build type (new or rehab).  
+* **Dashboard – Record stats:** Shows stats and chats breaking down the status of your records and data entry progression, like the number of records assigned to each collaborator. 
+* **Dashboard – Project stats:** Shows an overview of your data, like the breakdown of real estate development projects by build type (new or rehab).  
 
 
 ## Automations

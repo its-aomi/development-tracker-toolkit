@@ -1,11 +1,26 @@
 import TableOfContents from './TableOfContents';
 
 # 10. Using the Tips table
-The public-facing site includes a page with a form that allows users to submit tips and optional photos about any real estate development project in your city. It also includes a version of the tip form at the bottom of every development project page. Any tips submitted using these forms will be pulled into the Tips table. 
+The public-facing site includes two ways for users to submit tips and optional photos about any real estate development project in your city. There is a dedicated ["Submit a tip" form page](/submit-a-tip), as well as a version of the tip form at the bottom of every development project page. Tips submitted using either type of form will be pulled into the Tips table. 
 
 
 ## Fields
 
+Here is a list of all the fields that are used in the Tips table. Below, in sequence through the fields as they are displayed in the Airtable grid view, find details on formatting and how each field is used as part of your data structure, creating the live site and managing data entry workflows. 
+
+* Email
+* Name
+* Report
+* Address
+* Attachments
+* Publish photo?
+* Projects
+* Project - manual add
+* Assigned to
+* Tip status
+* Replied?
+* Notes
+* Created
 
 ### Email
 
@@ -106,8 +121,7 @@ A checkbox to confirm whether a collaborator has replied to the submitter of the
 
 ### Notes
 
-A long-text field you cnan use internally to share notes about the record or communication with the tipster. 
-
+A long-text field you can use internally to share notes about the record or communication with the tipster. 
 
 
 * Using this field is optional.  
@@ -133,7 +147,7 @@ This is an automated field with the date and time the record was created.
 
 ## Automations
 
-You may find it helpful to set up an automation to get notifications whenever a new record is created, aka, whenever someone submits a tip. 
+You may find it helpful to set up an automation to get notifications whenever a new record is created, in other words, whenever someone submits a tip. 
 
-*Now that you understand how the Airtable side works -- and have possibly started adding data -- it's time to code. The next section walks you through setting up your site.*
+*Now that you understand how the Airtable side works — and have possibly started adding data — it's time to code. The next section walks you through setting up your site.*
 <TableOfContents index={9} />

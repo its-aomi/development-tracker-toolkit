@@ -2,19 +2,21 @@ import TableOfContents from "./TableOfContents";
 
 # 5. Starting with the data
 
-Data collection is the most challenging part of this process to give instructions for, since it will vary so much by location. Here is what we did, as well as some other advice and considerations.
+this guide does not include step-by-step instructions for data collection, since process will vary so much by location. Here is what we did, as well as some other advice and considerations.
 
-Part of the reason we created the Detroit Development Tracker was because the pace of real estate development in the city, which had been suppressed in recent decades, skyrocketed in the years following the 2014 municipal bankruptcy. What was once almost possible to keep track of mentally became a sprawling list of several hundred projects across the city. Although many of those developments have been reported on in local outlets, we saw a need for a central location that made it easy for residents to look up information about projects that affected them and their communities. Pandemic construction delays further underscored the value of bringing information about development plans and timelines out of the archived article format. We were also inspired to do this project in part because of the information that is and isn’t made accessible through the city – there are useful datasets to draw from in Detroit’s Open Data Portal, and plenty more that lives in PDFs found only through searching for the file format on the city site.
+Part of the reason we created the Detroit Development Tracker was because the pace of real estate development in the city, which had been suppressed in recent decades, skyrocketed in the years following the 2014 municipal bankruptcy. What was once almost possible to keep track of mentally became a sprawling list of several hundred projects across Detroit. 
+
+Although many of those developments have been reported on in local outlets, we saw a need for a central location that made it easy for residents to look up information about projects that affected them and their communities. Pandemic construction delays further underscored the value of bringing information about development plans and timelines out of the archived article format. We were also inspired to do this project in part because of the information that is and isn’t made accessible through the city – there are useful datasets to draw from in Detroit’s Open Data Portal, and plenty more that lives in PDFs found only through searching for the file format on the city site.
 
 ## Data structure
 
-Our first step was to create a structure for our data, which you will be replicating for your site. You can see this laid out in more detail in the [Airtable sections](./guide/organize-your-data-airtable-basics), but most simply, each development project is its own record and includes a geographic location and other standard elements, like an attached image and the project’s status, selected from a set number of options. 
+Our first step was to create a structure for our data, which you will be replicating for your site. You can see this laid out in more detail in the [Airtable sections](./organize-your-data-airtable-basics), but most simply, each development project is its own record and includes a geographic location and other standard elements, like an attached image and the project’s status, selected from a set number of options. 
 
 Our current data structure has weaknesses – in particular, the synopsis field, which is used to describe each project in paragraph form and includes information that should theoretically be parceled out into separate fields, like dates projects are announced or begin and complete construction; developer names; financial subsidies and projected development costs; city agencies that are involved in the approvals process; etc.
 
 We used the synopsis anyway for a few reasons. One, we pulled information from a variety of sources that lack comprehensiveness, so we weren’t sure we would be able to consistently pull all the types of data we wanted to include, or be able to share it in a standard format. Two, the development industry includes lots of changing timelines, financial figures and plans, and we struggled to come up with a structure that would easily account for changes. Three, this format was reasonably simple to lay out on a page and code for as we worked to get our beta tracker up and running. We plan to conduct user research to determine what information will be most helpful to users and will continue working on the site, with hopes to display more information in the future. With coding know-how, this is something you could explore for your version of the tracker now.
 
-You will have to create your own internal defintions, thresholds and options for certain for certain columns, like type of development project or project status. For example, we've included "marijuana businesses" alongside broader project types like "residential" or "retail," because it's a newly growing industry and the subject of local interest in Detroit. 
+You will have to create your own internal definitions, thresholds and options for certain columns, like type of development project or project status. For example, we've included "marijuana businesses" alongside broader project types like "residential" or "retail," because it's a newly growing industry and the subject of local interest in Detroit. 
 
 ## Data sources
 
@@ -24,7 +26,7 @@ When you are trying to identify data sources, it will be most helpful to think a
 
 It is also helpful to think about the stakeholders in the development sphere who already have this knowledge and may make information public. These could include developers, neighborhood groups, financiers, preservationists and citizens who are enthusiastic or critical about development.
 
-Here are some of the sources we used to identify development projects we would add to the tracker, and/or that we check routinely to keep the development tracker updated:
+Here are some of the sources that we used to identify development projects we would add to the tracker, and/or that we check routinely to keep the development tracker updated:
 
 - Published news articles, from our outlet and other local publishers who report on real estate development
 - Meeting agendas for City Council and other local government bodies
@@ -41,13 +43,13 @@ As you can see, these sources vary widely in format, scope, amount of verificati
 
 Our data input was entirely manual, save one element: we manually added the city’s parcel ID for a development project to each record, and built a custom display component that looks up more information about that parcel from the city’s open data portal, including the taxpayer and zoning information. We’ve included this component in the toolkit for reference, although it is not embedded in the site. You may be able to build your own component to pull some information, and connect it to your Airtable base and site – if you try this, please let us know how it goes.
 
-Or, you may have access to more robust datasets than we did that you want to put directly into your Airtable base. You could potentially import Google Sheets, Excel and CSV files into the Projects table, using Airtable’s [import function](https://support.airtable.com/hc/en-us/sections/200928025-Importing-and-adding-data) to map your file’s columns to the matching fields in your table. If you had a simple spreadsheet of all the addresses and names of developments in a particular neighborhood, for example, you could import that data, then continue adding information to those records within Airtable. If you do this, make sure you aren’t adding improperly formatted values or adjusting fields that are required for the site to function properly ([more details here](./guide/setting-up-your-airtable-base#what-you-can-and-cant-customize-without-coding)).
+Or, you may have access to more robust datasets than we did that you want to put directly into your Airtable base. You could potentially import Google Sheets, Excel and CSV files into the Projects table, using Airtable’s [import function](https://support.airtable.com/hc/en-us/sections/200928025-Importing-and-adding-data) to map your file’s columns to the matching fields in your table. If you had a simple spreadsheet of all the addresses and names of developments in a particular neighborhood, for example, you could import that data, then continue adding information to those records within Airtable. If you do this, make sure you aren’t adding improperly formatted values or adjusting fields that are required for the site to function properly ([more details here](./setting-up-your-airtable-base#what-you-can-and-cant-customize-without-coding)).
 
-Unless you already have datasets housed elsewhere, we recommend working directly within the Airtable base to add any data manually (rather than adding to a separate spreadsheet and importing later). See the [Airtable section for details about configuring interfaces](./guide/using-the-projects-table#interfaces) that give you a user-friendly view of records for easier data input, writing and editing.
+Unless you already have datasets housed elsewhere, we recommend working directly within the Airtable base to add any data manually (rather than creating a separate spreadsheet and importing later). See the [Airtable section for details about configuring interfaces](./using-the-projects-table#interfaces) that give you a user-friendly view of records for easier data input, writing and editing.
 
 To manually add projects, we used the sources listed above to identify projects and then conducted further research to fill all fields. For the first stage of data collection, we focused on projects with enough reported or public information available that we could complete records solely through research. Any projects that needed further reporting we marked as “Hold” to save for later. As we amass tips from readers and start identifying projects earlier in the development process, our workflow will require more verification and reporting.
 
-For more about the types and format of information to collect for each record, see the [Airtable sections](./guide/organize-your-data-airtable-basics). For more about workflows for adding and managing your data, see the [Managing your tracker section](./guide/managing-your-development-tracker#workflows-for-data-and-managing-the-tracker).
+For more about the types and format of information to collect for each record, see the [Airtable sections](./organize-your-data-airtable-basics). For more about workflows for adding and managing your data, see the [Managing your tracker section](./managing-your-development-tracker#workflows-for-data-and-managing-the-tracker).
 
 ## Other data considerations
 
@@ -57,8 +59,8 @@ For more about the types and format of information to collect for each record, s
 - How will you externally demonstrate changes to records or express that records may change?
 - How will you be transparent about archiving, clarifying if and when you stop updating records or the entire app?
 - How will you be transparent about who is behind the project and its mission?
-- How else will you be transparent with readers about your data policies, sources, what is and isn’t included; how they could use this information and more?
-- How will you add safeguards against human error in data entry and managing the database, i.e. correcting typos and avoiding duplicative work?
+- How else will you be transparent with readers about your data policies, sources, what is and isn’t included, how they could use this information and more?
+- How will you add safeguards against human error in data entry and managing the database, i.e. correcting typos and avoiding duplicating work?
 - How will you save information from other sources that could go offline, i.e., will you save archived versions of sites or posts you link to?
 
 ## A few additional data resources
