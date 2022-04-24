@@ -55,11 +55,21 @@ To do this, you'll need to install the [Netlify CLI](https://www.netlify.com/pro
 
 Your site needs to be periodically rebuilt and redeployed in order to pull in the latest data from Airtable.
 
-There are a few different methods to do this - we'll look at the manual methods first and then look at ways the site can be automatically rebuilt.
+By default, when you change the site's code, on the `production` branch, Netlify will see that the code has changed and rebuild the site. This will fetch a new copy of the data from Airtable.
+
+However, most of the time you will want to republish your site without changing the code.
 
 ### Manual republishing of the site
 
+There are a few ways that you can manually republish the site and pull in new Airtable data:
+
+- In the Netlify website, navigate to your site page, and click the "Deploys" tab. You can trigger a new deploy by choosing the "Deploy site" option under the "Trigger deploy" dropdown.
+- Install the [Netlify CLI](https://docs.netlify.com/cli/get-started/) -- then, from a terminal, in your site's folder, you will be able to run the `netlify deploy` command from a terminal to trigger a new deploy.
+
 ### Automatic republishing of the site
+
+- Netlify has a [full integration with Zapier](https://www.netlify.com/blog/2018/11/07/automate-your-netlify-sites-with-zapier/). You can use this to rebuild the site on a schedule.
+- You can create a [build hook](https://docs.netlify.com/configure-builds/build-hooks/) in Netlify; this will give you a URL to which you can send an HTTP POST request, in order to trigger a new build/deploy. You can use this hook in a number of situations. For instance, from any terminal, you could send this POST request with: `curl -X POST -d {} https://api.netlify.com/build_hooks/<your_build_hook_id>`.
 
 *In the next section, you'll learn more about workflows for managing your tracker's data.*
 

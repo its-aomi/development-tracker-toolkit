@@ -6,8 +6,6 @@ import new_supabase_bucket_policy from "./images/setting-up-the-site/new-supabas
 
 You will need several online accounts and programs installed on your computer to set up the site. 
 
-
-
 * Sign up for a [GitHub account](https://github.com/join). Read [GitHub’s FAQs](https://docs.github.com/en/get-started) for an introduction to using GitHub. 
 * Install Git on your computer. See instructions [here](https://github.com/git-guides/install-git). (You may need other software installed for Git to function – on a Mac, you will need [Xcode](https://developer.apple.com/xcode/).) 
 * Install Node.js and npm. See instructions [here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
@@ -76,14 +74,14 @@ Mapbox is used for the map on the site, as well as to geocode the [addresses](./
 * Copy, the `anon` `public` API key, starting with `ey`, as the `NEXT_PUBLIC_SUPABASE_ANON_KEY` in the `.env.development.local` file in VSCode.
 * Copy the URL of the Supabase project, including the `.supabase.co` suffix, under "Configuration", as the `NEXT_PUBLIC_SUPABASE_URL` in `.env.development.local`.
 
-
 Congrats! You've configured all the underlying services - you're ready to run the development server.
 
 ## Start the development server
 
 Now that you're done configuring the site, it's time to run a development server locally so you can make changes to the site and test those changes on your local machine, before pushing those changes to your GitHub repository.
 
-Within VSCode, while you are working within the root directory of your site, open the terminal (Menu > View > Terminal). Then run the command `run npm install`. (You “run” by entering that text and then hitting enter.) Installation may take a few minutes. 
+Within VSCode, while you are working within the root directory of your site, open the terminal (Menu > View > Terminal). Then run the command `run npm install`. (You “run” by entering that text and then hitting enter.) Installation may take a few minutes.
+
 Then, run the following command: `npm run dev`.
 
 You should see a message in the terminal:
