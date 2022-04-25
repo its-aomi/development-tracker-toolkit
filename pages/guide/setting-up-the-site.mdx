@@ -43,7 +43,7 @@ You should already have an Airtable account; the next step is to get your person
 
 * Find your API key on your [Airtable account page](https://airtable.com/account). You will have to click the purple input box to reveal the API key.
 * Copy this value as the `AIRTABLE_API_KEY` (after the `=` sign) in `.env.development.local`.
-* Find the ID of your base: From the [Airtable API documentation](https://airtable.com/api), select your base; the base ID, which starts with `app`, is the value you need.
+* Find the ID of your base: From the [Airtable API documentation](https://airtable.com/api), select your base. The base ID, which starts with `app`, is the value you need.
 * Copy this value as the `AIRTABLE_BASE_ID` in `.env.development.local`.
 
 ### Mapbox configuration
@@ -57,28 +57,28 @@ Mapbox is used for the map on the site, as well as to geocode the [addresses](./
 
 #### Configuring Supabase bucket
 
-* Create a new project, named `development-tracker.` (It may take a few minutes to set up before you can proceed.)
+* Create a new project, named `development-tracker`. (It may take a few minutes to set up before you can proceed.)
 * Create a new storage bucket, named `report-photos`. Make sure that the "public bucket" option is checked.
-* Go to "Policies", under "Configuration", and create a "New policy" on the `report-photos` bucket.
-* Choose "Create a policy from scratch".
+* Go to "Policies" under "Configuration" to create a "New policy" on the `report-photos` bucket.
+* Choose "Create a policy from scratch."
   * Create a new policy. `SELECT` and `INSERT` should be checked.
-  * For policy name, enter: `“Reviewing policies to be created for report-photos"`
+  * For policy name, enter: `Reviewing policies to be created for report-photos`
   * For policy definition, enter: `(bucket_id = 'report-photos'::text)`
 
 <Image src={new_supabase_bucket_policy} />
 
 #### Supabase environment variables
 
-* Navigate to your Supabase project settings, which is the gear icon on the bottom of the left-hand sidebar.
+* Navigate to your Supabase project settings, found in the gear icon on the bottom of the left-hand sidebar.
 * Click "API" under "Project Settings."
 * Copy, the `anon` `public` API key, starting with `ey`, as the `NEXT_PUBLIC_SUPABASE_ANON_KEY` in the `.env.development.local` file in VSCode.
-* Copy the URL of the Supabase project, including the `.supabase.co` suffix, under "Configuration", as the `NEXT_PUBLIC_SUPABASE_URL` in `.env.development.local`.
+* Under "Configuration", copy the URL of the Supabase project including the `.supabase.co` suffix  as the `NEXT_PUBLIC_SUPABASE_URL` in `.env.development.local`.
 
 Congrats! You've configured all the underlying services - you're ready to run the development server.
 
 ## Start the development server
 
-Now that you're done configuring the site, it's time to run a development server locally so you can make changes to the site and test those changes on your local machine, before pushing those changes to your GitHub repository.
+Now that you're done configuring the site, it's time to run a development server locally so you can make changes to the site and test those changes on your local machine before pushing those changes to your GitHub repository.
 
 Within VSCode, while you are working within the root directory of your site, open the terminal (Menu > View > Terminal). Then run the command `run npm install`. (You “run” by entering that text and then hitting enter.) Installation may take a few minutes.
 
