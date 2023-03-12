@@ -12,7 +12,7 @@ const ProjectList = ({ projects, search=null, title=null }) => {
       project.address.toLowerCase().indexOf(search) > -1 ||
       project.status.toLowerCase().indexOf(search) > -1 ||
       project.synopsis.toLowerCase().indexOf(search) > -1 ||
-      project.uses.toLowerCase().indexOf(search) > -1)
+      (typeof project.uses === 'string' && project.uses.toLowerCase().indexOf(search) > -1))
     })
   }
 
