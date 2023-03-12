@@ -1,7 +1,7 @@
 module.exports = {
-  siteTitle: `Local Development Tracker Toolkit`,
+  siteTitle: `Aomi Development Tracker`,
   siteUrl: `https://local-development-tracker-toolkit.netlify.app`,
-  organization: `Your Organization`,
+  organization: `Aomi LLC`,
   city: `Detroit`,
   state: `Michigan`,
   boundingBox: [-83.287803, 42.25496, -82.910427, 42.45023],
