@@ -4,7 +4,7 @@ module.exports = {
   organization: `Aomi LLC`,
   city: `Detroit`,
   state: `Michigan`,
-  boundingBox: [-83.287803, 42.25496, -82.910427, 42.45023],
+  boundingBox: [-129.7577498749,22.3963338816,-62.765404086,49.9896899366],
   primary: '#9ADCFF',
   secondary: '#FFF89A',
   tertiary: '#FFB2A6',
